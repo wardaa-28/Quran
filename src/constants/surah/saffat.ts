@@ -1,0 +1,912 @@
+export const surahAsSaffat = [
+    {
+        ayah: 1,
+        arabic: "وَٱلصَّـٰٓفَّـٰتِ صَفّٗا",
+        translation: "By those [angels] lined up in rows"
+    },
+    {
+        ayah: 2,
+        arabic: "فَٱلزَّـٰجِرَٰتِ زَجۡرٗا",
+        translation: "And those who drive [the clouds]"
+    },
+    {
+        ayah: 3,
+        arabic: "فَٱلتَّـٰلِيَٰتِ ذِكۡرًا",
+        translation: "And those who recite the message"
+    },
+    {
+        ayah: 4,
+        arabic: "إِنَّ إِلَٰهَكُمۡ لَوَٰحِدٞ",
+        translation: "Indeed, your God is One"
+    },
+    {
+        ayah: 5,
+        arabic: "رَّبُّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَمَا بَيۡنَهُمَا وَرَبُّ ٱلۡمَشَٰرِقِ",
+        translation: "Lord of the heavens and the earth and that between them and Lord of the sunrises"
+    },
+    {
+        ayah: 6,
+        arabic: "إِنَّا زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنۡيَا بِزِينَةٍ ٱلۡكَوَاكِبِ",
+        translation: "Indeed, We have adorned the nearest heaven with an adornment of stars"
+    },
+    {
+        ayah: 7,
+        arabic: "وَحِفۡظٗا مِّن كُلِّ شَيۡطَٰنٖ مَّارِدٖ",
+        translation: "And as protection against every rebellious devil"
+    },
+    {
+        ayah: 8,
+        arabic: "لَّا يَسَّمَّعُونَ إِلَى ٱلۡمَلَإِ ٱلۡأَعۡلَىٰ وَيُقۡذَفُونَ مِن كُلِّ جَانِبٖ",
+        translation: "[So] they may not listen to the exalted assembly [of angels] and are pelted from every side"
+    },
+    {
+        ayah: 9,
+        arabic: "دُحُورٗاۖ وَلَهُمۡ عَذَابٞ وَاصِبٌ",
+        translation: "Repelled; and for them is a constant punishment"
+    },
+    {
+        ayah: 10,
+        arabic: "إِلَّا مَنۡ خَطِفَ ٱلۡخَطۡفَةَ فَأَتۡبَعَهُۥ شِهَابٞ ثَاقِبٞ",
+        translation: "Except one who snatches [some words] by theft, but they are pursued by a burning flame, piercing [in brightness]"
+    },
+    {
+        ayah: 11,
+        arabic: "فَٱسۡتَفۡتِهِمۡ أَهُمۡ أَشَدُّ خَلۡقًا أَم مَّنۡ خَلَقۡنَآۚ إِنَّا خَلَقۡنَٰهُم مِّن طِينٖ لَّازِبِۭ",
+        translation: "Then inquire of them, [O Muhammad], \"Are they a stronger [or more difficult] creation or those [others] We have created?\" Indeed, We created men from sticky clay"
+    },
+    {
+        ayah: 12,
+        arabic: "بَلۡ عَجِبۡتَ وَيَسۡخَرُونَ",
+        translation: "But you wonder, while they mock"
+    },
+    {
+        ayah: 13,
+        arabic: "وَإِذَا ذُكِّرُواْ لَا يَذۡكُرُونَ",
+        translation: "And when they are reminded, they remember not"
+    },
+    {
+        ayah: 14,
+        arabic: "وَإِذَا رَأَوۡاْ ءَايَةٗ يَسۡتَسۡخِرُونَ",
+        translation: "And when they see a sign, they ridicule"
+    },
+    {
+        ayah: 15,
+        arabic: "وَقَالُوٓاْ إِنۡ هَٰذَآ إِلَّا سِحۡرٞ مُّبِينٌ",
+        translation: "And say, \"This is not but obvious magic"
+    },
+    {
+        ayah: 16,
+        arabic: "أَءِذَا مِتۡنَا وَكُنَّا تُرَابٗا وَعِظَٰمًا أَءِنَّا لَمَبۡعُوثُونَ",
+        translation: "When we have died and become dust and bones, are we indeed to be resurrected"
+    },
+    {
+        ayah: 17,
+        arabic: "أَوَءَابَآؤُنَا ٱلۡأَوَّلُونَ",
+        translation: "And our forefathers [as well]"
+    },
+    {
+        ayah: 18,
+        arabic: "قُلۡ نَعَمۡ وَأَنتُمۡ دَٰخِرُونَ",
+        translation: "Say, \"Yes, and you will be [rendered] contemptible"
+    },
+    {
+        ayah: 19,
+        arabic: "فَإِنَّمَا هِيَ زَجۡرَةٞ وَٰحِدَةٞ فَإِذَا هُمۡ يَنظُرُونَ",
+        translation: "It will be only one shout, and at once they will be observing"
+    },
+    {
+        ayah: 20,
+        arabic: "وَقَالُواْ يَٰوَيۡلَنَا هَٰذَا يَوۡمُ ٱلدِّينِ",
+        translation: "They will say, \"O woe to us! This is the Day of Recompense"
+    },
+    {
+        ayah: 21,
+        arabic: "هَٰذَا يَوۡمُ ٱلۡفَصۡلِ ٱلَّذِي كُنتُم بِهِۦ تُكَذِّبُونَ",
+        translation: "[They will be told], \"This is the Day of Judgement which you used to deny"
+    },
+    {
+        ayah: 22,
+        arabic: "۞ٱحۡشُرُواْ ٱلَّذِينَ ظَلَمُواْ وَأَزۡوَٰجَهُمۡ وَمَا كَانُواْ يَعۡبُدُونَ",
+        translation: "[The angels will be ordered], \"Gather those who committed wrong, their kinds, and what they used to worship"
+    },
+    {
+        ayah: 23,
+        arabic: "مِن دُونِ ٱللَّهِ فَٱهۡدُوهُمۡ إِلَىٰ صِرَٰطِ ٱلۡجَحِيمِ",
+        translation: "Other than Allah, and guide them to the path of Hellfire"
+    },
+    {
+        ayah: 24,
+        arabic: "وَقِفُوهُمۡۖ إِنَّهُم مَّسۡـُٔولُونَ",
+        translation: "And stop them; indeed, they are to be questioned"
+    },
+    {
+        ayah: 25,
+        arabic: "مَا لَكُمۡ لَا تَنَاصَرُونَ",
+        translation: "[They will be asked], \"What is [wrong] with you? Why do you not help each other"
+    },
+    {
+        ayah: 26,
+        arabic: "بَلۡ هُمُ ٱلۡيَوۡمَ مُسۡتَسۡلِمُونَ",
+        translation: "But they, that Day, are in surrender"
+    },
+    {
+        ayah: 27,
+        arabic: "وَأَقۡبَلَ بَعۡضُهُمۡ عَلَىٰ بَعۡضٖ يَتَسَآءَلُونَ",
+        translation: "And they will approach one another blaming each other"
+    },
+    {
+        ayah: 28,
+        arabic: "قَالُوٓاْ إِنَّكُمۡ كُنتُمۡ تَأۡتُونَنَا عَنِ ٱلۡيَمِينِ",
+        translation: "They will say, \"Indeed, you used to come at us from the right"
+    },
+    {
+        ayah: 29,
+        arabic: "قَالُواْ بَل لَّمۡ تَكُونُواْ مُؤۡمِنِينَ",
+        translation: "The oppressors will say, \"Rather, you [yourselves] were not believers"
+    },
+    {
+        ayah: 30,
+        arabic: "وَمَا كَانَ لَنَا عَلَيۡكُم مِّن سُلۡطَٰنِۭۖ بَلۡ كُنتُمۡ قَوۡمٗا طَٰغِينَ",
+        translation: "And we had over you no authority, but you were a transgressing people"
+    },
+    {
+        ayah: 31,
+        arabic: "فَحَقَّ عَلَيۡنَا قَوۡلُ رَبِّنَآۖ إِنَّا لَذَآئِقُونَ",
+        translation: "So the word of our Lord has come into effect upon us; indeed, we will taste [punishment]"
+    },
+    {
+        ayah: 32,
+        arabic: "فَأَغۡوَيۡنَٰكُمۡ إِنَّا كُنَّا غَٰوِينَ",
+        translation: "And we led you to deviation; indeed, we were deviators"
+    },
+    {
+        ayah: 33,
+        arabic: "فَإِنَّهُمۡ يَوۡمَئِذٖ فِي ٱلۡعَذَابِ مُشۡتَرِكُونَ",
+        translation: "So indeed they, that Day, will be sharing in the punishment"
+    },
+    {
+        ayah: 34,
+        arabic: "إِنَّا كَذَٰلِكَ نَفۡعَلُ بِٱلۡمُجۡرِمِينَ",
+        translation: "Indeed, that is how We deal with the criminals"
+    },
+    {
+        ayah: 35,
+        arabic: "إِنَّهُمۡ كَانُوٓاْ إِذَا قِيلَ لَهُمۡ لَآ إِلَٰهَ إِلَّا ٱللَّهُ يَسۡتَكۡبِرُونَ",
+        translation: "Indeed they, when it was said to them, \"There is no deity but Allah,\" were arrogant"
+    },
+    {
+        ayah: 36,
+        arabic: "وَيَقُولُونَ أَئِنَّا لَتَارِكُوٓاْ ءَالِهَتِنَا لِشَاعِرٖ مَّجۡنُونِۭ",
+        translation: "And were saying, \"Are we to leave our gods for a mad poet"
+    },
+    {
+        ayah: 37,
+        arabic: "بَلۡ جَآءَ بِٱلۡحَقِّ وَصَدَّقَ ٱلۡمُرۡسَلِينَ",
+        translation: "Rather, the Prophet has come with the truth and confirmed the [previous] messengers"
+    },
+    {
+        ayah: 38,
+        arabic: "إِنَّكُمۡ لَذَآئِقُواْ ٱلۡعَذَابِ ٱلۡأَلِيمِ",
+        translation: "Indeed, you [disbelievers] will be tasters of the painful punishment"
+    },
+    {
+        ayah: 39,
+        arabic: "وَمَا تُجۡزَوۡنَ إِلَّا مَا كُنتُمۡ تَعۡمَلُونَ",
+        translation: "And you will not be recompensed except for what you used to do"
+    },
+    {
+        ayah: 40,
+        arabic: "إِلَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ",
+        translation: "But not the chosen servants of Allah"
+    },
+    {
+        ayah: 41,
+        arabic: "أُوْلَـٰٓئِكَ لَهُمۡ رِزۡقٞ مَّعۡلُومٞ",
+        translation: "Those will have a provision determined"
+    },
+    {
+        ayah: 42,
+        arabic: "فَوَٰكِهُ وَهُم مُّكۡرَمُونَ",
+        translation: "Fruits; and they will be honored"
+    },
+    {
+        ayah: 43,
+        arabic: "فِي جَنَّـٰتِ ٱلنَّعِيمِ",
+        translation: "In gardens of pleasure"
+    },
+    {
+        ayah: 44,
+        arabic: "عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ",
+        translation: "On thrones facing one another"
+    },
+    {
+        ayah: 45,
+        arabic: "يُطَافُ عَلَيۡهِم بِكَأۡسٖ مِّن مَّعِينِۭ",
+        translation: "There will be circulated among them a cup [of wine] from a flowing spring"
+    },
+    {
+        ayah: 46,
+        arabic: "بَيۡضَآءَ لَذَّةٖ لِّلشَّـٰرِبِينَ",
+        translation: "White and delicious to the drinkers"
+    },
+    {
+        ayah: 47,
+        arabic: "لَا فِيهَا غَوۡلٞ وَلَا هُمۡ عَنۡهَا يُنزَفُونَ",
+        translation: "No bad effect is there in it, nor from it will they be intoxicated"
+    },
+    {
+        ayah: 48,
+        arabic: "وَعِندَهُمۡ قَٰصِرَٰتُ ٱلطَّرۡفِ عِينٞ",
+        translation: "And with them will be women limiting [their] glances, with large, [beautiful] eyes"
+    },
+    {
+        ayah: 49,
+        arabic: "كَأَنَّهُنَّ بَيۡضٞ مَّكۡنُونٞ",
+        translation: "As if they were [delicate] eggs, well-protected"
+    },
+    {
+        ayah: 50,
+        arabic: "فَأَقۡبَلَ بَعۡضُهُمۡ عَلَىٰ بَعۡضٖ يَتَسَآءَلُونَ",
+        translation: "And they will approach one another, inquiring of each other"
+    },
+    {
+        ayah: 51,
+        arabic: "قَالَ قَآئِلٞ مِّنۡهُمۡ إِنِّي كَانَ لِي قَرِينٞ",
+        translation: "A speaker among them will say, \"Indeed, I had a companion [on earth]"
+    },
+    {
+        ayah: 52,
+        arabic: "يَقُولُ أَءِنَّكَ لَمِنَ ٱلۡمُصَدِّقِينَ",
+        translation: "Who would say, 'Are you indeed of those who believe"
+    },
+    {
+        ayah: 53,
+        arabic: "أَءِذَا مِتۡنَا وَكُنَّا تُرَابٗا وَعِظَٰمًا أَءِنَّا لَمَدِينُونَ",
+        translation: "That when we have died and become dust and bones, we will indeed be recompensed"
+    },
+    {
+        ayah: 54,
+        arabic: "قَالَ هَلۡ أَنتُم مُّطَّلِعُونَ",
+        translation: "He will say, \"Would you [care to] look"
+    },
+    {
+        ayah: 55,
+        arabic: "فَٱطَّلَعَ فَرَءَاهُ فِي سَوَآءِ ٱلۡجَحِيمِ",
+        translation: "And he will look and see him in the midst of the Hellfire"
+    },
+    {
+        ayah: 56,
+        arabic: "قَالَ تَٱللَّهِ إِن كِدتَّ لَتُرۡدِينِ",
+        translation: "He will say, \"By Allah, you almost ruined me"
+    },
+    {
+        ayah: 57,
+        arabic: "وَلَوۡلَا نِعۡمَةُ رَبِّي لَكُنتُ مِنَ ٱلۡمُحۡضَرِينَ",
+        translation: "If not for the favor of my Lord, I would have been of those brought in [to Hell]"
+    },
+    {
+        ayah: 58,
+        arabic: "أَفَمَا نَحۡنُ بِمَيِّتِينَ",
+        translation: "Then, are we not to die"
+    },
+    {
+        ayah: 59,
+        arabic: "إِلَّا مَوۡتَتَنَا ٱلۡأُولَىٰ وَمَا نَحۡنُ بِمُعَذَّبِينَ",
+        translation: "Except for our first death, and we will not be punished"
+    },
+    {
+        ayah: 60,
+        arabic: "إِنَّ هَٰذَا لَهُوَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ",
+        translation: "Indeed, this is the great attainment"
+    },
+    {
+        ayah: 61,
+        arabic: "لِمِثۡلِ هَٰذَا فَلۡيَعۡمَلِ ٱلۡعَٰمِلُونَ",
+        translation: "For the like of this let the workers [on earth] work"
+    },
+    {
+        ayah: 62,
+        arabic: "أَذَٰلِكَ خَيۡرٞ نُّزُلًا أَمۡ شَجَرَةُ ٱلزَّقُّومِ",
+        translation: "Is Paradise a better accommodation or the tree of zaqqum"
+    },
+    {
+        ayah: 63,
+        arabic: "إِنَّا جَعَلۡنَٰهَا فِتۡنَةٗ لِّلظَّـٰلِمِينَ",
+        translation: "Indeed, We have made it a torment for the wrongdoers"
+    },
+    {
+        ayah: 64,
+        arabic: "إِنَّهَا شَجَرَةٞ تَخۡرُجُ فِيٓ أَصۡلِ ٱلۡجَحِيمِ",
+        translation: "Indeed, it is a tree issuing from the bottom of the Hellfire"
+    },
+    {
+        ayah: 65,
+        arabic: "طَلۡعُهَا كَأَنَّهُۥ رُءُوسُ ٱلشَّيَٰطِينِ",
+        translation: "Its emerging fruit as if it was heads of the devils"
+    },
+    {
+        ayah: 66,
+        arabic: "فَإِنَّهُمۡ لَأٓكِلُونَ مِنۡهَا فَمَالِـُٔونَ مِنۡهَا ٱلۡبُطُونَ",
+        translation: "And indeed, they will eat from it and fill with it their bellies"
+    },
+    {
+        ayah: 67,
+        arabic: "ثُمَّ إِنَّ لَهُمۡ عَلَيۡهَا لَشَوۡبٗا مِّنۡ حَمِيمٖ",
+        translation: "Then indeed, they will have after it a mixture of scalding water"
+    },
+    {
+        ayah: 68,
+        arabic: "ثُمَّ إِنَّ مَرۡجِعَهُمۡ لَإِلَى ٱلۡجَحِيمِ",
+        translation: "Then indeed, their return will be to the Hellfire"
+    },
+    {
+        ayah: 69,
+        arabic: "إِنَّهُمۡ أَلۡفَوۡاْ ءَابَآءَهُمۡ ضَآلِّينَ",
+        translation: "Indeed they found their fathers astray"
+    },
+    {
+        ayah: 70,
+        arabic: "فَهُمۡ عَلَىٰٓ ءَاثَٰرِهِمۡ يُهۡرَعُونَ",
+        translation: "So they hastened [to follow] in their footsteps"
+    },
+    {
+        ayah: 71,
+        arabic: "وَلَقَدۡ ضَلَّ قَبۡلَهُمۡ أَكۡثَرُ ٱلۡأَوَّلِينَ",
+        translation: "And there had already strayed before them most of the former peoples"
+    },
+    {
+        ayah: 72,
+        arabic: "وَلَقَدۡ أَرۡسَلۡنَا فِيهِم مُّنذِرِينَ",
+        translation: "And We had already sent among them warners"
+    },
+    {
+        ayah: 73,
+        arabic: "فَٱنظُرۡ كَيۡفَ كَانَ عَٰقِبَةُ ٱلۡمُنذَرِينَ",
+        translation: "Then look how was the end of those who were warned"
+    },
+    {
+        ayah: 74,
+        arabic: "إِلَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ",
+        translation: "But not the chosen servants of Allah"
+    },
+    {
+        ayah: 75,
+        arabic: "وَلَقَدۡ نَادَىٰنَا نُوحٞ فَلَنِعۡمَ ٱلۡمُجِيبُونَ",
+        translation: "And Noah had certainly called Us, and [We are] the best of responders"
+    },
+    {
+        ayah: 76,
+        arabic: "وَنَجَّيۡنَٰهُ وَأَهۡلَهُۥ مِنَ ٱلۡكَرۡبِ ٱلۡعَظِيمِ",
+        translation: "And We saved him and his family from the great affliction"
+    },
+    {
+        ayah: 77,
+        arabic: "وَجَعَلۡنَا ذُرِّيَّتَهُۥ هُمُ ٱلۡبَاقِينَ",
+        translation: "And We made his descendants those remaining [on the earth]"
+    },
+    {
+        ayah: 78,
+        arabic: "وَتَرَكۡنَا عَلَيۡهِ فِي ٱلۡأٓخِرِينَ",
+        translation: "And left for him [favorable mention] among later generations"
+    },
+    {
+        ayah: 79,
+        arabic: "سَلَٰمٌ عَلَىٰ نُوحٖ فِي ٱلۡعَٰلَمِينَ",
+        translation: "Peace upon Noah among the worlds"
+    },
+    {
+        ayah: 80,
+        arabic: "إِنَّا كَذَٰلِكَ نَجۡزِي ٱلۡمُحۡسِنِينَ",
+        translation: "Indeed, We thus reward the doers of good"
+    },
+    {
+        ayah: 81,
+        arabic: "إِنَّهُۥ مِنۡ عِبَادِنَا ٱلۡمُؤۡمِنِينَ",
+        translation: "Indeed, he was of Our believing servants"
+    },
+    {
+        ayah: 82,
+        arabic: "ثُمَّ أَغۡرَقۡنَا ٱلۡأٓخَرِينَ",
+        translation: "Then We drowned the disbelievers"
+    },
+    {
+        ayah: 83,
+        arabic: "۞وَإِنَّ مِن شِيعَتِهِۦ لَإِبۡرَٰهِيمَ",
+        translation: "And indeed, among his kind was Abraham"
+    },
+    {
+        ayah: 84,
+        arabic: "إِذۡ جَآءَ رَبَّهُۥ بِقَلۡبٖ سَلِيمٍ",
+        translation: "When he came to his Lord with a sound heart"
+    },
+    {
+        ayah: 85,
+        arabic: "إِذۡ قَالَ لِأَبِيهِ وَقَوۡمِهِۦ مَاذَا تَعۡبُدُونَ",
+        translation: "[And] when he said to his father and his people, \"What do you worship"
+    },
+    {
+        ayah: 86,
+        arabic: "أَئِفۡكًا ءَالِهَةٗ دُونَ ٱللَّهِ تُرِيدُونَ",
+        translation: "Is it falsehood [as] gods other than Allah you desire"
+    },
+    {
+        ayah: 87,
+        arabic: "فَمَا ظَنُّكُم بِرَبِّ ٱلۡعَٰلَمِينَ",
+        translation: "Then what is your thought about the Lord of the worlds"
+    },
+    {
+        ayah: 88,
+        arabic: "فَنَظَرَ نَظۡرَةٗ فِي ٱلنُّجُومِ",
+        translation: "And he cast a look at the stars"
+    },
+    {
+        ayah: 89,
+        arabic: "فَقَالَ إِنِّي سَقِيمٞ",
+        translation: "And said, \"Indeed, I am [about to be] ill"
+    },
+    {
+        ayah: 90,
+        arabic: "فَتَوَلَّوۡاْ عَنۡهُ مُدۡبِرِينَ",
+        translation: "So they turned away from him, departing"
+    },
+    {
+        ayah: 91,
+        arabic: "فَرَاغَ إِلَىٰٓ ءَالِهَتِهِمۡ فَقَالَ أَلَا تَأۡكُلُونَ",
+        translation: "Then he turned to their gods and said, \"Do you not eat"
+    },
+    {
+        ayah: 92,
+        arabic: "مَا لَكُمۡ لَا تَنطِقُونَ",
+        translation: "What is [wrong] with you that you do not speak"
+    },
+    {
+        ayah: 93,
+        arabic: "فَرَاغَ عَلَيۡهِمۡ ضَرۡبَۢا بِٱلۡيَمِينِ",
+        translation: "And he turned upon them a blow with [his] right hand"
+    },
+    {
+        ayah: 94,
+        arabic: "فَأَقۡبَلُوٓاْ إِلَيۡهِ يَزِفُّونَ",
+        translation: "Then the people came toward him, hastening"
+    },
+    {
+        ayah: 95,
+        arabic: "قَالَ أَتَعۡبُدُونَ مَا تَنۡحِتُونَ",
+        translation: "He said, \"Do you worship that which you [yourselves] carve"
+    },
+    {
+        ayah: 96,
+        arabic: "وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ",
+        translation: "While Allah created you and that which you do"
+    },
+    {
+        ayah: 97,
+        arabic: "قَالُواْ ٱبۡنُواْ لَهُۥ بُنۡيَٰنٗا فَأَلۡقُوهُ فِي ٱلۡجَحِيمِ",
+        translation: "They said, \"Construct for him a furnace and throw him into the burning fire"
+    },
+    {
+        ayah: 98,
+        arabic: "فَأَرَادُواْ بِهِۦ كَيۡدٗا فَجَعَلۡنَٰهُمُ ٱلۡأَسۡفَلِينَ",
+        translation: "And they intended for him a plan, but We made them the most debased"
+    },
+    {
+        ayah: 99,
+        arabic: "وَقَالَ إِنِّي ذَاهِبٌ إِلَىٰ رَبِّي سَيَهۡدِينِ",
+        translation: "And [then] he said, \"Indeed, I will go to [where I am ordered by] my Lord; He will guide me"
+    },
+    {
+        ayah: 100,
+        arabic: "رَبِّ هَبۡ لِي مِنَ ٱلصَّـٰلِحِينَ",
+        translation: "My Lord, grant me [a child] from among the righteous"
+    },
+    {
+        ayah: 101,
+        arabic: "فَبَشَّرۡنَٰهُ بِغُلَٰمٍ حَلِيمٖ",
+        translation: "So We gave him good tidings of a forbearing boy"
+    },
+    {
+        ayah: 102,
+        arabic: "فَلَمَّا بَلَغَ مَعَهُ ٱلسَّعۡيَ قَالَ يَٰبُنَيَّ إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ قَالَ يَـٰٓأَبَتِ ٱفۡعَلۡ مَا تُؤۡمَرُۖ سَتَجِدُنِيٓ إِن شَآءَ ٱللَّهُ مِنَ ٱلصَّـٰبِرِينَ",
+        translation: "And when he reached with him [the age of] exertion, he said, \"O my son, indeed I have seen in a dream that I [must] sacrifice you, so see what you think.\" He said, \"O my father, do as you are commanded. You will find me, if Allah wills, of the steadfast"
+    },
+    {
+        ayah: 103,
+        arabic: "فَلَمَّآ أَسۡلَمَا وَتَلَّهُۥ لِلۡجَبِينِ",
+        translation: "And when they had both submitted and he put him down upon his forehead"
+    },
+    {
+        ayah: 104,
+        arabic: "وَنَٰدَيۡنَٰهُ أَن يَـٰٓإِبۡرَٰهِيمُ",
+        translation: "We called to him, \"O Abraham"
+    },
+    {
+        ayah: 105,
+        arabic: "قَدۡ صَدَّقۡتَ ٱلرُّءۡيَآۚ إِنَّا كَذَٰلِكَ نَجۡزِي ٱلۡمُحۡسِنِينَ",
+        translation: "You have fulfilled the vision.\" Indeed, We thus reward the doers of good"
+    },
+    {
+        ayah: 106,
+        arabic: "إِنَّ هَٰذَا لَهُوَ ٱلۡبَلَـٰٓؤُاْ ٱلۡمُبِينُ",
+        translation: "Indeed, this was the clear trial"
+    },
+    {
+        ayah: 107,
+        arabic: "وَفَدَيۡنَٰهُ بِذِبۡحٍ عَظِيمٖ",
+        translation: "And We ransomed him with a great sacrifice"
+    },
+    {
+        ayah: 108,
+        arabic: "وَتَرَكۡنَا عَلَيۡهِ فِي ٱلۡأٓخِرِينَ",
+        translation: "And We left for him [favorable mention] among later generations"
+    },
+    {
+        ayah: 109,
+        arabic: "سَلَٰمٌ عَلَىٰٓ إِبۡرَٰهِيمَ",
+        translation: "Peace upon Abraham"
+    },
+    {
+        ayah: 110,
+        arabic: "كَذَٰلِكَ نَجۡزِي ٱلۡمُحۡسِنِينَ",
+        translation: "Indeed, We thus reward the doers of good"
+    },
+    {
+        ayah: 111,
+        arabic: "إِنَّهُۥ مِنۡ عِبَادِنَا ٱلۡمُؤۡمِنِينَ",
+        translation: "Indeed, he was of Our believing servants"
+    },
+    {
+        ayah: 112,
+        arabic: "وَبَشَّرۡنَٰهُ بِإِسۡحَٰقَ نَبِيّٗا مِّنَ ٱلصَّـٰلِحِينَ",
+        translation: "And We gave him good tidings of Isaac, a prophet from among the righteous"
+    },
+    {
+        ayah: 113,
+        arabic: "وَبَٰرَكۡنَا عَلَيۡهِ وَعَلَىٰٓ إِسۡحَٰقَۚ وَمِن ذُرِّيَّتِهِمَا مُحۡسِنٞ وَظَالِمٞ لِّنَفۡسِهِۦ مُبِينٞ",
+        translation: "And We blessed him and Isaac. But among their descendants is the doer of good and the clearly unjust to himself"
+    },
+    {
+        ayah: 114,
+        arabic: "وَلَقَدۡ مَنَنَّا عَلَىٰ مُوسَىٰ وَهَٰرُونَ",
+        translation: "And We did certainly confer favor upon Moses and Aaron"
+    },
+    {
+        ayah: 115,
+        arabic: "وَنَجَّيۡنَٰهُمَا وَقَوۡمَهُمَا مِنَ ٱلۡكَرۡبِ ٱلۡعَظِيمِ",
+        translation: "And We saved them and their people from the great affliction"
+    },
+    {
+        ayah: 116,
+        arabic: "وَنَصَرۡنَٰهُمۡ فَكَانُواْ هُمُ ٱلۡغَٰلِبِينَ",
+        translation: "And We supported them so it was they who overcame"
+    },
+    {
+        ayah: 117,
+        arabic: "وَءَاتَيۡنَٰهُمَا ٱلۡكِتَٰبَ ٱلۡمُسۡتَبِينَ",
+        translation: "And We gave them the explicit Scripture"
+    },
+    {
+        ayah: 118,
+        arabic: "وَهَدَيۡنَٰهُمَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ",
+        translation: "And We guided them on the straight path"
+    },
+    {
+        ayah: 119,
+        arabic: "وَتَرَكۡنَا عَلَيۡهِمَا فِي ٱلۡأٓخِرِينَ",
+        translation: "And We left for them [favorable mention] among later generations"
+    },
+    {
+        ayah: 120,
+        arabic: "سَلَٰمٌ عَلَىٰ مُوسَىٰ وَهَٰرُونَ",
+        translation: "Peace upon Moses and Aaron"
+    },
+    {
+        ayah: 121,
+        arabic: "إِنَّا كَذَٰلِكَ نَجۡزِي ٱلۡمُحۡسِنِينَ",
+        translation: "Indeed, We thus reward the doers of good"
+    },
+    {
+        ayah: 122,
+        arabic: "إِنَّهُمَا مِنۡ عِبَادِنَا ٱلۡمُؤۡمِنِينَ",
+        translation: "Indeed, they were of Our believing servants"
+    },
+    {
+        ayah: 123,
+        arabic: "وَإِنَّ إِلۡيَاسَ لَمِنَ ٱلۡمُرۡسَلِينَ",
+        translation: "And indeed, Elias was from among the messengers"
+    },
+    {
+        ayah: 124,
+        arabic: "إِذۡ قَالَ لِقَوۡمِهِۦٓ أَلَا تَتَّقُونَ",
+        translation: "When he said to his people, \"Will you not fear Allah"
+    },
+    {
+        ayah: 125,
+        arabic: "أَتَدۡعُونَ بَعۡلٗا وَتَذَرُونَ أَحۡسَنَ ٱلۡخَٰلِقِينَ",
+        translation: "Do you call upon Ba'l and leave the best of creators"
+    },
+    {
+        ayah: 126,
+        arabic: "ٱللَّهَ رَبَّكُمۡ وَرَبَّ ءَابَآئِكُمُ ٱلۡأَوَّلِينَ",
+        translation: "Allah, your Lord and the Lord of your first forefathers"
+    },
+    {
+        ayah: 127,
+        arabic: "فَكَذَّبُوهُ فَإِنَّهُمۡ لَمُحۡضَرُونَ",
+        translation: "And they denied him, so indeed, they will be brought [for punishment]"
+    },
+    {
+        ayah: 128,
+        arabic: "إِلَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ",
+        translation: "Except the chosen servants of Allah"
+    },
+    {
+        ayah: 129,
+        arabic: "وَتَرَكۡنَا عَلَيۡهِ فِي ٱلۡأٓخِرِينَ",
+        translation: "And We left for him [favorable mention] among later generations"
+    },
+    {
+        ayah: 130,
+        arabic: "سَلَٰمٌ عَلَىٰٓ إِلۡ يَاسِينَ",
+        translation: "Peace upon Elias"
+    },
+    {
+        ayah: 131,
+        arabic: "إِنَّا كَذَٰلِكَ نَجۡزِي ٱلۡمُحۡسِنِينَ",
+        translation: "Indeed, We thus reward the doers of good"
+    },
+    {
+        ayah: 132,
+        arabic: "إِنَّهُۥ مِنۡ عِبَادِنَا ٱلۡمُؤۡمِنِينَ",
+        translation: "Indeed, he was of Our believing servants"
+    },
+    {
+        ayah: 133,
+        arabic: "وَإِنَّ لُوطٗا لَّمِنَ ٱلۡمُرۡسَلِينَ",
+        translation: "And indeed, Lot was among the messengers"
+    },
+    {
+        ayah: 134,
+        arabic: "إِذۡ نَجَّيۡنَٰهُ وَأَهۡلَهُۥٓ أَجۡمَعِينَ",
+        translation: "[So mention] when We saved him and his family, all"
+    },
+    {
+        ayah: 135,
+        arabic: "إِلَّا عَجُوزٗا فِي ٱلۡغَٰبِرِينَ",
+        translation: "Except his wife among those who remained [with the evildoers]"
+    },
+    {
+        ayah: 136,
+        arabic: "ثُمَّ دَمَّرۡنَا ٱلۡأٓخَرِينَ",
+        translation: "Then We destroyed the others"
+    },
+    {
+        ayah: 137,
+        arabic: "وَإِنَّكُمۡ لَتَمُرُّونَ عَلَيۡهِم مُّصۡبِحِينَ",
+        translation: "And indeed, you pass by them in the morning"
+    },
+    {
+        ayah: 138,
+        arabic: "وَبِٱلَّيۡلِۚ أَفَلَا تَعۡقِلُونَ",
+        translation: "And at night. Then will you not use reason"
+    },
+    {
+        ayah: 139,
+        arabic: "وَإِنَّ يُونُسَ لَمِنَ ٱلۡمُرۡسَلِينَ",
+        translation: "And indeed, Jonah was among the messengers"
+    },
+    {
+        ayah: 140,
+        arabic: "إِذۡ أَبَقَ إِلَى ٱلۡفُلۡكِ ٱلۡمَشۡحُونِ",
+        translation: "[Mention] when he ran away to the laden ship"
+    },
+    {
+        ayah: 141,
+        arabic: "فَسَاهَمَ فَكَانَ مِنَ ٱلۡمُدۡحَضِينَ",
+        translation: "And he drew lots and was among the losers"
+    },
+    {
+        ayah: 142,
+        arabic: "فَٱلۡتَقَمَهُ ٱلۡحُوتُ وَهُوَ مُلِيمٞ",
+        translation: "Then the fish swallowed him, while he was blameworthy"
+    },
+    {
+        ayah: 143,
+        arabic: "فَلَوۡلَآ أَنَّهُۥ كَانَ مِنَ ٱلۡمُسَبِّحِينَ",
+        translation: "And had he not been of those who exalt Allah"
+    },
+    {
+        ayah: 144,
+        arabic: "لَلَبِثَ فِي بَطۡنِهِۦٓ إِلَىٰ يَوۡمِ يُبۡعَثُونَ",
+        translation: "He would have remained inside its belly until the Day they are resurrected"
+    },
+    {
+        ayah: 145,
+        arabic: "۞فَنَبَذۡنَٰهُ بِٱلۡعَرَآءِ وَهُوَ سَقِيمٞ",
+        translation: "But We threw him onto the open shore while he was ill"
+    },
+    {
+        ayah: 146,
+        arabic: "وَأَنۢبَتۡنَا عَلَيۡهِ شَجَرَةٗ مِّن يَقۡطِينٖ",
+        translation: "And We caused to grow over him a gourd vine"
+    },
+    {
+        ayah: 147,
+        arabic: "وَأَرۡسَلۡنَٰهُ إِلَىٰ مِاْئَةِ أَلۡفٍ أَوۡ يَزِيدُونَ",
+        translation: "And We sent him to [his people of] a hundred thousand or more"
+    },
+    {
+        ayah: 148,
+        arabic: "فَـَٔامَنُواْ فَمَتَّعۡنَٰهُمۡ إِلَىٰ حِينٖ",
+        translation: "And they believed, so We gave them enjoyment [of life] for a time"
+    },
+    {
+        ayah: 149,
+        arabic: "فَٱسۡتَفۡتِهِمۡ أَلِرَبِّكَ ٱلۡبَنَاتُ وَلَهُمُ ٱلۡبَنُونَ",
+        translation: "So inquire of them, [O Muhammad], \"Does your Lord have daughters while they have sons"
+    },
+    {
+        ayah: 150,
+        arabic: "أَمۡ خَلَقۡنَا ٱلۡمَلَـٰٓئِكَةَ إِنَٰثٗا وَهُمۡ شَٰهِدُونَ",
+        translation: "Or did We create the angels as females while they were witnesses"
+    },
+    {
+        ayah: 151,
+        arabic: "أَلَآ إِنَّهُم مِّنۡ إِفۡكِهِمۡ لَيَقُولُونَ",
+        translation: "Unquestionably, it is out of their [invented] falsehood that they say"
+    },
+    {
+        ayah: 152,
+        arabic: "وَلَدَ ٱللَّهُ وَإِنَّهُمۡ لَكَٰذِبُونَ",
+        translation: "Allah has begotten,\" and indeed, they are liars"
+    },
+    {
+        ayah: 153,
+        arabic: "أَصۡطَفَى ٱلۡبَنَاتِ عَلَى ٱلۡبَنِينَ",
+        translation: "Has He chosen daughters over sons"
+    },
+    {
+        ayah: 154,
+        arabic: "مَا لَكُمۡ كَيۡفَ تَحۡكُمُونَ",
+        translation: "What is [wrong] with you? How do you make judgement"
+    },
+    {
+        ayah: 155,
+        arabic: "أَفَلَا تَذَكَّرُونَ",
+        translation: "Then will you not be reminded"
+    },
+    {
+        ayah: 156,
+        arabic: "أَمۡ لَكُمۡ سُلۡطَٰنٞ مُّبِينٞ",
+        translation: "Or do you have a clear authority"
+    },
+    {
+        ayah: 157,
+        arabic: "فَأۡتُواْ بِكِتَٰبِكُمۡ إِن كُنتُمۡ صَٰدِقِينَ",
+        translation: "Then produce your scripture, if you should be truthful"
+    },
+    {
+        ayah: 158,
+        arabic: "وَجَعَلُواْ بَيۡنَهُۥ وَبَيۡنَ ٱلۡجِنَّةِ نَسَبٗاۚ وَلَقَدۡ عَلِمَتِ ٱلۡجِنَّةُ إِنَّهُمۡ لَمُحۡضَرُونَ",
+        translation: "And they have claimed between Him and the jinn a lineage, but the jinn have already known that they [who made such claims] will be brought to [punishment]"
+    },
+    {
+        ayah: 159,
+        arabic: "سُبۡحَٰنَ ٱللَّهِ عَمَّا يَصِفُونَ",
+        translation: "Exalted is Allah above what they describe"
+    },
+    {
+        ayah: 160,
+        arabic: "إِلَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ",
+        translation: "Except the chosen servants of Allah [who do not share in that sin]"
+    },
+    {
+        ayah: 161,
+        arabic: "فَإِنَّكُمۡ وَمَا تَعۡبُدُونَ",
+        translation: "So indeed, you [disbelievers] and whatever you worship"
+    },
+    {
+        ayah: 162,
+        arabic: "مَآ أَنتُمۡ عَلَيۡهِ بِفَٰتِنِينَ",
+        translation: "You cannot tempt [anyone] away from Him"
+    },
+    {
+        ayah: 163,
+        arabic: "إِلَّا مَنۡ هُوَ صَالِ ٱلۡجَحِيمِ",
+        translation: "Except he who is to [enter and] burn in the Hellfire"
+    },
+    {
+        ayah: 164,
+        arabic: "وَمَامِنَّآ إِلَّا لَهُۥ مَقَامٞ مَّعۡلُومٞ",
+        translation: "[The angels say], \"There is not among us any except that he has a known position"
+    },
+    {
+        ayah: 165,
+        arabic: "وَإِنَّا لَنَحۡنُ ٱلصَّآفُّونَ",
+        translation: "And indeed, we are those who line up [for prayer]"
+    },
+    {
+        ayah: 166,
+        arabic: "وَإِنَّا لَنَحۡنُ ٱلۡمُسَبِّحُونَ",
+        translation: "And indeed, we are those who exalt Allah"
+    },
+    {
+        ayah: 167,
+        arabic: "وَإِن كَانُواْ لَيَقُولُونَ",
+        translation: "And indeed, the disbelievers used to say"
+    },
+    {
+        ayah: 168,
+        arabic: "لَوۡ أَنَّ عِندَنَا ذِكۡرٗا مِّنَ ٱلۡأَوَّلِينَ",
+        translation: "If we had a message from [those of] the former peoples"
+    },
+    {
+        ayah: 169,
+        arabic: "لَكُنَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ",
+        translation: "We would have been the chosen servants of Allah"
+    },
+    {
+        ayah: 170,
+        arabic: "فَكَفَرُواْ بِهِۦۖ فَسَوۡفَ يَعۡلَمُونَ",
+        translation: "But they disbelieved in it, so they are going to know"
+    },
+    {
+        ayah: 171,
+        arabic: "وَلَقَدۡ سَبَقَتۡ كَلِمَتُنَا لِعِبَادِنَا ٱلۡمُرۡسَلِينَ",
+        translation: "And Our word has already preceded for Our servants, the messengers"
+    },
+    {
+        ayah: 172,
+        arabic: "إِنَّهُمۡ لَهُمُ ٱلۡمَنصُورُونَ",
+        translation: "[That] indeed, they would be those given victory"
+    },
+    {
+        ayah: 173,
+        arabic: "وَإِنَّ جُندَنَا لَهُمُ ٱلۡغَٰلِبُونَ",
+        translation: "And [that] indeed, Our soldiers will be those who overcome"
+    },
+    {
+        ayah: 174,
+        arabic: "فَتَوَلَّ عَنۡهُمۡ حَتَّىٰ حِينٖ",
+        translation: "So, [O Muhammad], leave them for a time"
+    },
+    {
+        ayah: 175,
+        arabic: "وَأَبۡصِرۡهُمۡ فَسَوۡفَ يُبۡصِرُونَ",
+        translation: "And see [what will befall] them, for they are going to see"
+    },
+    {
+        ayah: 176,
+        arabic: "أَفَبِعَذَابِنَا يَسۡتَعۡجِلُونَ",
+        translation: "Then for Our punishment are they impatient"
+    },
+    {
+        ayah: 177,
+        arabic: "فَإِذَا نَزَلَ بِسَاحَتِهِمۡ فَسَآءَ صَبَاحُ ٱلۡمُنذَرِينَ",
+        translation: "But when it descends in their territory, then evil is the morning of those who were warned"
+    },
+    {
+        ayah: 178,
+        arabic: "وَتَوَلَّ عَنۡهُمۡ حَتَّىٰ حِينٖ",
+        translation: "And leave them for a time"
+    },
+    {
+        ayah: 179,
+        arabic: "وَأَبۡصِرۡ فَسَوۡفَ يُبۡصِرُونَ",
+        translation: "And see, for they are going to see"
+    },
+    {
+        ayah: 180,
+        arabic: "سُبۡحَٰنَ رَبِّكَ رَبِّ ٱلۡعِزَّةِ عَمَّا يَصِفُونَ",
+        translation: "Exalted is your Lord, the Lord of might, above what they describe"
+    },
+    {
+        ayah: 181,
+        arabic: "وَسَلَٰمٌ عَلَى ٱلۡمُرۡسَلِينَ",
+        translation: "And peace upon the messengers"
+    },
+    {
+        ayah: 182,
+        arabic: "وَٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
+        translation: "And praise to Allah, Lord of the worlds"
+    }
+];

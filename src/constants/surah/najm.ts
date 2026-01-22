@@ -1,0 +1,312 @@
+export const surahAnNajm = [
+    {
+        ayah: 1,
+        arabic: "وَٱلنَّجۡمِ إِذَا هَوَىٰ",
+        translation: "By the star when it descends"
+    },
+    {
+        ayah: 2,
+        arabic: "مَا ضَلَّ صَاحِبُكُمۡ وَمَا غَوَىٰ",
+        translation: "Your companion [Muhammad] has not strayed, nor has he erred"
+    },
+    {
+        ayah: 3,
+        arabic: "وَمَا يَنطِقُ عَنِ ٱلۡهَوَىٰٓ",
+        translation: "Nor does he speak from [his own] inclination"
+    },
+    {
+        ayah: 4,
+        arabic: "إِنۡ هُوَ إِلَّا وَحۡيٞ يُوحَىٰ",
+        translation: "It is not but a revelation revealed"
+    },
+    {
+        ayah: 5,
+        arabic: "عَلَّمَهُۥ شَدِيدُ ٱلۡقُوَىٰ",
+        translation: "Taught to him by one intense in strength"
+    },
+    {
+        ayah: 6,
+        arabic: "ذُو مِرَّةٖ فَٱسۡتَوَىٰ",
+        translation: "One of soundness. And he rose to [his] true form"
+    },
+    {
+        ayah: 7,
+        arabic: "وَهُوَ بِٱلۡأُفُقِ ٱلۡأَعۡلَىٰ",
+        translation: "While he was in the higher [part of the] horizon"
+    },
+    {
+        ayah: 8,
+        arabic: "ثُمَّ دَنَا فَتَدَلَّىٰ",
+        translation: "Then he approached and descended"
+    },
+    {
+        ayah: 9,
+        arabic: "فَكَانَ قَابَ قَوۡسَيۡنِ أَوۡ أَدۡنَىٰ",
+        translation: "And was at a distance of two bow lengths or nearer"
+    },
+    {
+        ayah: 10,
+        arabic: "فَأَوۡحَىٰٓ إِلَىٰ عَبۡدِهِۦ مَآ أَوۡحَىٰ",
+        translation: "And he revealed to His Servant what he revealed"
+    },
+    {
+        ayah: 11,
+        arabic: "مَا كَذَبَ ٱلۡفُؤَادُ مَا رَأَىٰٓ",
+        translation: "The heart did not lie [about] what it saw"
+    },
+    {
+        ayah: 12,
+        arabic: "أَفَتُمَٰرُونَهُۥ عَلَىٰ مَا يَرَىٰ",
+        translation: "So will you dispute with him over what he saw"
+    },
+    {
+        ayah: 13,
+        arabic: "وَلَقَدۡ رَءَاهُ نَزۡلَةً أُخۡرَىٰ",
+        translation: "And he certainly saw him in another descent"
+    },
+    {
+        ayah: 14,
+        arabic: "عِندَ سِدۡرَةِ ٱلۡمُنتَهَىٰ",
+        translation: "At the Lote Tree of the Utmost Boundary"
+    },
+    {
+        ayah: 15,
+        arabic: "عِندَهَا جَنَّةُ ٱلۡمَأۡوَىٰٓ",
+        translation: "Near it is the Garden of Refuge"
+    },
+    {
+        ayah: 16,
+        arabic: "إِذۡ يَغۡشَى ٱلسِّدۡرَةَ مَا يَغۡشَىٰ",
+        translation: "When there covered the Lote Tree that which covered [it]"
+    },
+    {
+        ayah: 17,
+        arabic: "مَا زَاغَ ٱلۡبَصَرُ وَمَا طَغَىٰ",
+        translation: "The sight [of the Prophet] did not swerve, nor did it transgress [its limit]"
+    },
+    {
+        ayah: 18,
+        arabic: "لَقَدۡ رَأَىٰ مِنۡ ءَايَٰتِ رَبِّهِ ٱلۡكُبۡرَىٰٓ",
+        translation: "He certainly saw of the greatest signs of his Lord"
+    },
+    {
+        ayah: 19,
+        arabic: "أَفَرَءَيۡتُمُ ٱللَّـٰتَ وَٱلۡعُزَّىٰ",
+        translation: "So have you considered al-Lat and al-'Uzza"
+    },
+    {
+        ayah: 20,
+        arabic: "وَمَنَوٰةَ ٱلثَّالِثَةَ ٱلۡأُخۡرَىٰٓ",
+        translation: "And Manat, the third - the other one"
+    },
+    {
+        ayah: 21,
+        arabic: "أَلَكُمُ ٱلذَّكَرُ وَلَهُ ٱلۡأُنثَىٰ",
+        translation: "Is the male for you and for Him the female"
+    },
+    {
+        ayah: 22,
+        arabic: "تِلۡكَ إِذٗا قِسۡمَةٞ ضِيزَىٰٓ",
+        translation: "That, then, is an unjust division"
+    },
+    {
+        ayah: 23,
+        arabic: "إِنۡ هِيَ إِلَّآ أَسۡمَآءٞ سَمَّيۡتُمُوهَآ أَنتُمۡ وَءَابَآؤُكُم مَّآ أَنزَلَ ٱللَّهُ بِهَا مِن سُلۡطَٰنٍۚ إِن يَتَّبِعُونَ إِلَّا ٱلظَّنَّ وَمَا تَهۡوَى ٱلۡأَنفُسُۖ وَلَقَدۡ جَآءَهُم مِّن رَّبِّهِمُ ٱلۡهُدَىٰٓ",
+        translation: "They are not but [mere] names you have named them - you and your forefathers - for which Allah has sent down no authority. They follow not except assumption and what [their] souls desire, and there has already come to them from their Lord guidance"
+    },
+    {
+        ayah: 24,
+        arabic: "أَمۡ لِلۡإِنسَٰنِ مَا تَمَنَّىٰ",
+        translation: "Or is there for man whatever he wishes"
+    },
+    {
+        ayah: 25,
+        arabic: "فَلِلَّهِ ٱلۡأٓخِرَةُ وَٱلۡأُولَىٰ",
+        translation: "Rather, to Allah belongs the Hereafter and the first [life]"
+    },
+    {
+        ayah: 26,
+        arabic: "۞وَكَم مِّن مَّلَكٖ فِي ٱلسَّمَٰوَٰتِ لَا تُغۡنِي شَفَٰعَتُهُمۡ شَيۡـًٔا إِلَّا مِنۢ بَعۡدِ أَن يَأۡذَنَ ٱللَّهُ لِمَن يَشَآءُ وَيَرۡضَىٰٓ",
+        translation: "And how many angels there are in the heavens whose intercession will not avail at all except [only] after Allah has permitted [it] to whom He wills and approves"
+    },
+    {
+        ayah: 27,
+        arabic: "إِنَّ ٱلَّذِينَ لَا يُؤۡمِنُونَ بِٱلۡأٓخِرَةِ لَيُسَمُّونَ ٱلۡمَلَـٰٓئِكَةَ تَسۡمِيَةَ ٱلۡأُنثَىٰ",
+        translation: "Indeed, those who do not believe in the Hereafter name the angels female names"
+    },
+    {
+        ayah: 28,
+        arabic: "وَمَا لَهُم بِهِۦ مِنۡ عِلۡمٍۖ إِن يَتَّبِعُونَ إِلَّا ٱلظَّنَّۖ وَإِنَّ ٱلظَّنَّ لَا يُغۡنِي مِنَ ٱلۡحَقِّ شَيۡـٔٗا",
+        translation: "And they have thereof no knowledge. They follow not except assumption, and indeed, assumption avails not against the truth at all"
+    },
+    {
+        ayah: 29,
+        arabic: "فَأَعۡرِضۡ عَن مَّن تَوَلَّىٰ عَن ذِكۡرِنَا وَلَمۡ يُرِدۡ إِلَّا ٱلۡحَيَوٰةَ ٱلدُّنۡيَا",
+        translation: "So turn away from whoever turns his back on Our message and desires not except the worldly life"
+    },
+    {
+        ayah: 30,
+        arabic: "ذَٰلِكَ مَبۡلَغُهُم مِّنَ ٱلۡعِلۡمِۚ إِنَّ رَبَّكَ هُوَ أَعۡلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ وَهُوَ أَعۡلَمُ بِمَنِ ٱهۡتَدَىٰ",
+        translation: "That is their sum of knowledge. Indeed, your Lord is most knowing of who strays from His way, and He is most knowing of who is guided"
+    },
+    {
+        ayah: 31,
+        arabic: "وَلِلَّهِ مَا فِي ٱلسَّمَٰوَٰتِ وَمَا فِي ٱلۡأَرۡضِ لِيَجۡزِيَ ٱلَّذِينَ أَسَـٰٓـُٔواْ بِمَا عَمِلُواْ وَيَجۡزِيَ ٱلَّذِينَ أَحۡسَنُواْ بِٱلۡحُسۡنَى",
+        translation: "And to Allah belongs whatever is in the heavens and whatever is in the earth - that He may recompense those who do evil with [the penalty of] what they have done and recompense those who do good with the best [reward]"
+    },
+    {
+        ayah: 32,
+        arabic: "ٱلَّذِينَ يَجۡتَنِبُونَ كَبَـٰٓئِرَ ٱلۡإِثۡمِ وَٱلۡفَوَٰحِشَ إِلَّا ٱللَّمَمَۚ إِنَّ رَبَّكَ وَٰسِعُ ٱلۡمَغۡفِرَةِۚ هُوَ أَعۡلَمُ بِكُمۡ إِذۡ أَنشَأَكُم مِّنَ ٱلۡأَرۡضِ وَإِذۡ أَنتُمۡ أَجِنَّةٞ فِي بُطُونِ أُمَّهَٰتِكُمۡۖ فَلَا تُزَكُّوٓاْ أَنفُسَكُمۡۖ هُوَ أَعۡلَمُ بِمَنِ ٱتَّقَىٰٓ",
+        translation: "Those who avoid the major sins and immoralities, only [committing] slight ones. Indeed, your Lord is vast in forgiveness. He was most knowing of you when He produced you from the earth and when you were fetuses in the wombs of your mothers. So do not claim yourselves to be pure; He is most knowing of who fears Him"
+    },
+    {
+        ayah: 33,
+        arabic: "أَفَرَءَيۡتَ ٱلَّذِي تَوَلَّىٰ",
+        translation: "Have you seen the one who turned away"
+    },
+    {
+        ayah: 34,
+        arabic: "وَأَعۡطَىٰ قَلِيلٗا وَأَكۡدَىٰٓ",
+        translation: "And gave a little and [then] refrained"
+    },
+    {
+        ayah: 35,
+        arabic: "أَعِندَهُۥ عِلۡمُ ٱلۡغَيۡبِ فَهُوَ يَرَىٰٓ",
+        translation: "Does he have knowledge of the unseen, so he sees"
+    },
+    {
+        ayah: 36,
+        arabic: "أَمۡ لَمۡ يُنَبَّأۡ بِمَا فِي صُحُفِ مُوسَىٰ",
+        translation: "Or has he not been informed of what was in the scriptures of Moses"
+    },
+    {
+        ayah: 37,
+        arabic: "وَإِبۡرَٰهِيمَ ٱلَّذِي وَفَّىٰٓ",
+        translation: "And [of] Abraham, who fulfilled [his obligations]"
+    },
+    {
+        ayah: 38,
+        arabic: "أَلَّا تَزِرُ وَازِرَةٞ وِزۡرَ أُخۡرَىٰ",
+        translation: "That no bearer of burdens will bear the burden of another"
+    },
+    {
+        ayah: 39,
+        arabic: "وَأَن لَّيۡسَ لِلۡإِنسَٰنِ إِلَّا مَا سَعَىٰ",
+        translation: "And that there is not for man except that [good] for which he strives"
+    },
+    {
+        ayah: 40,
+        arabic: "وَأَنَّ سَعۡيَهُۥ سَوۡفَ يُرَىٰ",
+        translation: "And that his effort is going to be seen"
+    },
+    {
+        ayah: 41,
+        arabic: "ثُمَّ يُجۡزَىٰهُ ٱلۡجَزَآءَ ٱلۡأَوۡفَىٰ",
+        translation: "Then he will be recompensed for it with the fullest recompense"
+    },
+    {
+        ayah: 42,
+        arabic: "وَأَنَّ إِلَىٰ رَبِّكَ ٱلۡمُنتَهَىٰ",
+        translation: "And that to your Lord is the finality"
+    },
+    {
+        ayah: 43,
+        arabic: "وَأَنَّهُۥ هُوَ أَضۡحَكَ وَأَبۡكَىٰ",
+        translation: "And that it is He who makes [one] laugh and weep"
+    },
+    {
+        ayah: 44,
+        arabic: "وَأَنَّهُۥ هُوَ أَمَاتَ وَأَحۡيَا",
+        translation: "And that it is He who causes death and gives life"
+    },
+    {
+        ayah: 45,
+        arabic: "وَأَنَّهُۥ خَلَقَ ٱلزَّوۡجَيۡنِ ٱلذَّكَرَ وَٱلۡأُنثَىٰ",
+        translation: "And that He creates the two mates - the male and female"
+    },
+    {
+        ayah: 46,
+        arabic: "مِن نُّطۡفَةٍ إِذَا تُمۡنَىٰ",
+        translation: "From a sperm-drop when it is emitted"
+    },
+    {
+        ayah: 47,
+        arabic: "وَأَنَّ عَلَيۡهِ ٱلنَّشۡأَةَ ٱلۡأُخۡرَىٰ",
+        translation: "And that [incumbent] upon Him is the next creation"
+    },
+    {
+        ayah: 48,
+        arabic: "وَأَنَّهُۥ هُوَ أَغۡنَىٰ وَأَقۡنَىٰ",
+        translation: "And that it is He who enriches and suffices"
+    },
+    {
+        ayah: 49,
+        arabic: "وَأَنَّهُۥ هُوَ رَبُّ ٱلشِّعۡرَىٰ",
+        translation: "And that it is He who is the Lord of Sirius"
+    },
+    {
+        ayah: 50,
+        arabic: "وَأَنَّهُۥٓ أَهۡلَكَ عَادًا ٱلۡأُولَىٰ",
+        translation: "And that He destroyed the first [people of] 'Aad"
+    },
+    {
+        ayah: 51,
+        arabic: "وَثَمُودَاْ فَمَآ أَبۡقَىٰ",
+        translation: "And Thamud - and He did not spare [them]"
+    },
+    {
+        ayah: 52,
+        arabic: "وَقَوۡمَ نُوحٖ مِّن قَبۡلُۖ إِنَّهُمۡ كَانُواْ هُمۡ أَظۡلَمَ وَأَطۡغَىٰ",
+        translation: "And the people of Noah before. Indeed, it was they who were [even] more unjust and oppressing"
+    },
+    {
+        ayah: 53,
+        arabic: "وَٱلۡمُؤۡتَفِكَةَ أَهۡوَىٰ",
+        translation: "And the overturned towns He hurled down"
+    },
+    {
+        ayah: 54,
+        arabic: "فَغَشَّىٰهَا مَا غَشَّىٰ",
+        translation: "And covered them by that which He covered"
+    },
+    {
+        ayah: 55,
+        arabic: "فَبِأَيِّ ءَالَآءِ رَبِّكَ تَتَمَارَىٰ",
+        translation: "Then which of the favors of your Lord do you doubt"
+    },
+    {
+        ayah: 56,
+        arabic: "هَٰذَا نَذِيرٞ مِّنَ ٱلنُّذُرِ ٱلۡأُولَىٰٓ",
+        translation: "This [Prophet] is a warner like the former warners"
+    },
+    {
+        ayah: 57,
+        arabic: "أَزِفَتِ ٱلۡأٓزِفَةُ",
+        translation: "The Approaching Day has approached"
+    },
+    {
+        ayah: 58,
+        arabic: "لَيۡسَ لَهَا مِن دُونِ ٱللَّهِ كَاشِفَةٌ",
+        translation: "Of it, [from those] besides Allah, there is no remover"
+    },
+    {
+        ayah: 59,
+        arabic: "أَفَمِنۡ هَٰذَا ٱلۡحَدِيثِ تَعۡجَبُونَ",
+        translation: "Then at this statement do you wonder"
+    },
+    {
+        ayah: 60,
+        arabic: "وَتَضۡحَكُونَ وَلَا تَبۡكُونَ",
+        translation: "And you laugh and do not weep"
+    },
+    {
+        ayah: 61,
+        arabic: "وَأَنتُمۡ سَٰمِدُونَ",
+        translation: "While you are proudly sporting"
+    },
+    {
+        ayah: 62,
+        arabic: "فَٱسۡجُدُواْۤ لِلَّهِۤ وَٱعۡبُدُواْ۩",
+        translation: "So prostrate to Allah and worship [Him]"
+    }
+];

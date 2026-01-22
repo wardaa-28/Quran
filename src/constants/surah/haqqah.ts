@@ -1,0 +1,262 @@
+export const surahAlHaqqah = [
+    {
+        ayah: 1,
+        arabic: "ٱلۡحَآقَّةُ",
+        translation: "The Inevitable Reality"
+    },
+    {
+        ayah: 2,
+        arabic: "مَا ٱلۡحَآقَّةُ",
+        translation: "What is the Inevitable Reality"
+    },
+    {
+        ayah: 3,
+        arabic: "وَمَآ أَدۡرَىٰكَ مَا ٱلۡحَآقَّةُ",
+        translation: "And what can make you know what is the Inevitable Reality"
+    },
+    {
+        ayah: 4,
+        arabic: "كَذَّبَتۡ ثَمُودُ وَعَادُۢ بِٱلۡقَارِعَةِ",
+        translation: "Thamud and 'Aad denied the Striking Calamity"
+    },
+    {
+        ayah: 5,
+        arabic: "فَأَمَّا ثَمُودُ فَأُهۡلِكُواْ بِٱلطَّاغِيَةِ",
+        translation: "So as for Thamud, they were destroyed by the overpowering [blast]"
+    },
+    {
+        ayah: 6,
+        arabic: "وَأَمَّا عَادٞ فَأُهۡلِكُواْ بِرِيحٖ صَرۡصَرٍ عَاتِيَةٖ",
+        translation: "And as for 'Aad, they were destroyed by a screaming, violent wind"
+    },
+    {
+        ayah: 7,
+        arabic: "سَخَّرَهَا عَلَيۡهِمۡ سَبۡعَ لَيَالٖ وَثَمَٰنِيَةَ أَيَّامٍ حُسُومٗاۖ فَتَرَى ٱلۡقَوۡمَ فِيهَا صَرۡعَىٰ كَأَنَّهُمۡ أَعۡجَازُ نَخۡلٍ خَاوِيَةٖ",
+        translation: "Which Allah imposed upon them for seven nights and eight days in succession, so you would see the people therein fallen as if they were hollow trunks of palm trees"
+    },
+    {
+        ayah: 8,
+        arabic: "فَهَلۡ تَرَىٰ لَهُم مِّنۢ بَاقِيَةٖ",
+        translation: "Then do you see of them any remains"
+    },
+    {
+        ayah: 9,
+        arabic: "وَجَآءَ فِرۡعَوۡنُ وَمَن قَبۡلَهُۥ وَٱلۡمُؤۡتَفِكَٰتُ بِٱلۡخَاطِئَةِ",
+        translation: "And there came Pharaoh and those before him and the overturned cities with sin"
+    },
+    {
+        ayah: 10,
+        arabic: "فَعَصَوۡاْ رَسُولَ رَبِّهِمۡ فَأَخَذَهُمۡ أَخۡذَةٗ رَّابِيَةً",
+        translation: "And they disobeyed the messenger of their Lord, so He seized them with a seizure exceeding [in severity]"
+    },
+    {
+        ayah: 11,
+        arabic: "إِنَّا لَمَّا طَغَا ٱلۡمَآءُ حَمَلۡنَٰكُمۡ فِي ٱلۡجَارِيَةِ",
+        translation: "Indeed, when the water overflowed, We carried your ancestors in the sailing ship"
+    },
+    {
+        ayah: 12,
+        arabic: "لِنَجۡعَلَهَا لَكُمۡ تَذۡكِرَةٗ وَتَعِيَهَآ أُذُنٞ وَٰعِيَةٞ",
+        translation: "That We might make it for you a reminder and [that] a conscious ear would be conscious of it"
+    },
+    {
+        ayah: 13,
+        arabic: "فَإِذَا نُفِخَ فِي ٱلصُّورِ نَفۡخَةٞ وَٰحِدَةٞ",
+        translation: "Then when the Horn is blown with one blast"
+    },
+    {
+        ayah: 14,
+        arabic: "وَحُمِلَتِ ٱلۡأَرۡضُ وَٱلۡجِبَالُ فَدُكَّتَا دَكَّةٗ وَٰحِدَةٗ",
+        translation: "And the earth and the mountains are lifted and leveled with one blow"
+    },
+    {
+        ayah: 15,
+        arabic: "فَيَوۡمَئِذٖ وَقَعَتِ ٱلۡوَاقِعَةُ",
+        translation: "Then on that Day, the Resurrection will occur"
+    },
+    {
+        ayah: 16,
+        arabic: "وَٱنشَقَّتِ ٱلسَّمَآءُ فَهِيَ يَوۡمَئِذٖ وَاهِيَةٞ",
+        translation: "And the heaven will split [open], for that Day it is infirm"
+    },
+    {
+        ayah: 17,
+        arabic: "وَٱلۡمَلَكُ عَلَىٰٓ أَرۡجَآئِهَاۚ وَيَحۡمِلُ عَرۡشَ رَبِّكَ فَوۡقَهُمۡ يَوۡمَئِذٖ ثَمَٰنِيَةٞ",
+        translation: "And the angels are at its edges. And there will bear the Throne of your Lord above them, that Day, eight [of them]"
+    },
+    {
+        ayah: 18,
+        arabic: "يَوۡمَئِذٖ تُعۡرَضُونَ لَا تَخۡفَىٰ مِنكُمۡ خَافِيَةٞ",
+        translation: "That Day, you will be exhibited [for judgement]; not hidden among you is anything concealed"
+    },
+    {
+        ayah: 19,
+        arabic: "فَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِيَمِينِهِۦ فَيَقُولُ هَآؤُمُ ٱقۡرَءُواْ كِتَٰبِيَهۡ",
+        translation: "So as for he who is given his record in his right hand, he will say, \"Here, read my record"
+    },
+    {
+        ayah: 20,
+        arabic: "إِنِّي ظَنَنتُ أَنِّي مُلَٰقٍ حِسَابِيَهۡ",
+        translation: "Indeed, I was certain that I would be meeting my account"
+    },
+    {
+        ayah: 21,
+        arabic: "فَهُوَ فِي عِيشَةٖ رَّاضِيَةٖ",
+        translation: "So he will be in a pleasant life"
+    },
+    {
+        ayah: 22,
+        arabic: "فِي جَنَّةٍ عَالِيَةٖ",
+        translation: "In an elevated garden"
+    },
+    {
+        ayah: 23,
+        arabic: "قُطُوفُهَا دَانِيَةٞ",
+        translation: "Its [fruit] to be picked hanging near"
+    },
+    {
+        ayah: 24,
+        arabic: "كُلُواْ وَٱشۡرَبُواْ هَنِيٓـَٔۢا بِمَآ أَسۡلَفۡتُمۡ فِي ٱلۡأَيَّامِ ٱلۡخَالِيَةِ",
+        translation: "[They will be told], \"Eat and drink in satisfaction for what you put forth in the days past"
+    },
+    {
+        ayah: 25,
+        arabic: "وَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِشِمَالِهِۦ فَيَقُولُ يَٰلَيۡتَنِي لَمۡ أُوتَ كِتَٰبِيَهۡ",
+        translation: "But as for he who is given his record in his left hand, he will say, \"Oh, I wish I had not been given my record"
+    },
+    {
+        ayah: 26,
+        arabic: "وَلَمۡ أَدۡرِ مَا حِسَابِيَهۡ",
+        translation: "And had not known what is my account"
+    },
+    {
+        ayah: 27,
+        arabic: "يَٰلَيۡتَهَا كَانَتِ ٱلۡقَاضِيَةَ",
+        translation: "I wish my death had been the decisive one"
+    },
+    {
+        ayah: 28,
+        arabic: "مَآ أَغۡنَىٰ عَنِّي مَالِيَهۡۜ",
+        translation: "My wealth has not availed me"
+    },
+    {
+        ayah: 29,
+        arabic: "هَلَكَ عَنِّي سُلۡطَٰنِيَهۡ",
+        translation: "Gone from me is my authority"
+    },
+    {
+        ayah: 30,
+        arabic: "خُذُوهُ فَغُلُّوهُ",
+        translation: "[Allah will say], \"Seize him and shackle him"
+    },
+    {
+        ayah: 31,
+        arabic: "ثُمَّ ٱلۡجَحِيمَ صَلُّوهُ",
+        translation: "Then into Hellfire drive him"
+    },
+    {
+        ayah: 32,
+        arabic: "ثُمَّ فِي سِلۡسِلَةٖ ذَرۡعُهَا سَبۡعُونَ ذِرَاعٗا فَٱسۡلُكُوهُ",
+        translation: "Then into a chain whose length is seventy cubits insert him"
+    },
+    {
+        ayah: 33,
+        arabic: "إِنَّهُۥ كَانَ لَا يُؤۡمِنُ بِٱللَّهِ ٱلۡعَظِيمِ",
+        translation: "Indeed, he did not used to believe in Allah, the Most Great"
+    },
+    {
+        ayah: 34,
+        arabic: "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ",
+        translation: "Nor did he encourage the feeding of the poor"
+    },
+    {
+        ayah: 35,
+        arabic: "فَلَيۡسَ لَهُ ٱلۡيَوۡمَ هَٰهُنَا حَمِيمٞ",
+        translation: "So there is not for him here this Day any devoted friend"
+    },
+    {
+        ayah: 36,
+        arabic: "وَلَا طَعَامٌ إِلَّا مِنۡ غِسۡلِينٖ",
+        translation: "Nor any food except from the discharge of wounds"
+    },
+    {
+        ayah: 37,
+        arabic: "لَّا يَأۡكُلُهُۥٓ إِلَّا ٱلۡخَٰطِـُٔونَ",
+        translation: "None will eat it except the sinners"
+    },
+    {
+        ayah: 38,
+        arabic: "فَلَآ أُقۡسِمُ بِمَا تُبۡصِرُونَ",
+        translation: "So I swear by what you see"
+    },
+    {
+        ayah: 39,
+        arabic: "وَمَا لَا تُبۡصِرُونَ",
+        translation: "And what you do not see"
+    },
+    {
+        ayah: 40,
+        arabic: "إِنَّهُۥ لَقَوۡلُ رَسُولٖ كَرِيمٖ",
+        translation: "[That] indeed, the Qur'an is the word of a noble Messenger"
+    },
+    {
+        ayah: 41,
+        arabic: "وَمَا هُوَ بِقَوۡلِ شَاعِرٖۚ قَلِيلٗا مَّا تُؤۡمِنُونَ",
+        translation: "And it is not the word of a poet; little do you believe"
+    },
+    {
+        ayah: 42,
+        arabic: "وَلَا بِقَوۡلِ كَاهِنٖۚ قَلِيلٗا مَّا تَذَكَّرُونَ",
+        translation: "Nor the word of a soothsayer; little do you remember"
+    },
+    {
+        ayah: 43,
+        arabic: "تَنزِيلٞ مِّن رَّبِّ ٱلۡعَٰلَمِينَ",
+        translation: "[It is] a revelation from the Lord of the worlds"
+    },
+    {
+        ayah: 44,
+        arabic: "وَلَوۡ تَقَوَّلَ عَلَيۡنَا بَعۡضَ ٱلۡأَقَاوِيلِ",
+        translation: "And if Muhammad had made up about Us some [false] sayings"
+    },
+    {
+        ayah: 45,
+        arabic: "لَأَخَذۡنَا مِنۡهُ بِٱلۡيَمِينِ",
+        translation: "We would have seized him by the right hand"
+    },
+    {
+        ayah: 46,
+        arabic: "ثُمَّ لَقَطَعۡنَا مِنۡهُ ٱلۡوَتِينَ",
+        translation: "Then We would have cut from him the aorta"
+    },
+    {
+        ayah: 47,
+        arabic: "فَمَا مِنكُم مِّنۡ أَحَدٍ عَنۡهُ حَٰجِزِينَ",
+        translation: "And there is no one of you who could prevent [Us] from him"
+    },
+    {
+        ayah: 48,
+        arabic: "وَإِنَّهُۥ لَتَذۡكِرَةٞ لِّلۡمُتَّقِينَ",
+        translation: "And indeed, the Qur'an is a reminder for the righteous"
+    },
+    {
+        ayah: 49,
+        arabic: "وَإِنَّا لَنَعۡلَمُ أَنَّ مِنكُم مُّكَذِّبِينَ",
+        translation: "And indeed, We know that among you are deniers"
+    },
+    {
+        ayah: 50,
+        arabic: "وَإِنَّهُۥ لَحَسۡرَةٌ عَلَى ٱلۡكَٰفِرِينَ",
+        translation: "And indeed, it will be [a cause of] regret upon the disbelievers"
+    },
+    {
+        ayah: 51,
+        arabic: "وَإِنَّهُۥ لَحَقُّ ٱلۡيَقِينِ",
+        translation: "And indeed, it is the truth of certainty"
+    },
+    {
+        ayah: 52,
+        arabic: "فَسَبِّحۡ بِٱسۡمِ رَبِّكَ ٱلۡعَظِيمِ",
+        translation: "So exalt the name of your Lord, the Most Great"
+    }
+];

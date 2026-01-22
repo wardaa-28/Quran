@@ -1,0 +1,42 @@
+export const surahAtTakathur = [
+    {
+        ayah: 1,
+        arabic: "أَلۡهَىٰكُمُ ٱلتَّكَاثُرُ",
+        translation: "Competition in [worldly] increase diverts you"
+    },
+    {
+        ayah: 2,
+        arabic: "حَتَّىٰ زُرۡتُمُ ٱلۡمَقَابِرَ",
+        translation: "Until you visit the graveyards"
+    },
+    {
+        ayah: 3,
+        arabic: "كَلَّا سَوۡفَ تَعۡلَمُونَ",
+        translation: "No! You are going to know"
+    },
+    {
+        ayah: 4,
+        arabic: "ثُمَّ كَلَّا سَوۡفَ تَعۡلَمُونَ",
+        translation: "Then no! You are going to know"
+    },
+    {
+        ayah: 5,
+        arabic: "كَلَّا لَوۡ تَعۡلَمُونَ عِلۡمَ ٱلۡيَقِينِ",
+        translation: "No! If you only knew with knowledge of certainty"
+    },
+    {
+        ayah: 6,
+        arabic: "لَتَرَوُنَّ ٱلۡجَحِيمَ",
+        translation: "You will surely see the Hellfire"
+    },
+    {
+        ayah: 7,
+        arabic: "ثُمَّ لَتَرَوُنَّهَا عَيۡنَ ٱلۡيَقِينِ",
+        translation: "Then you will surely see it with the eye of certainty"
+    },
+    {
+        ayah: 8,
+        arabic: "ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ",
+        translation: "Then you will surely be asked that Day about pleasure"
+    }
+];
