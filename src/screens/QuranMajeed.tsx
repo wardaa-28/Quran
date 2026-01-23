@@ -111,7 +111,7 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
         </View>
 
         {/* Playback Section */}
-        <ScrollView
+        {/* <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.playbackSection}
@@ -133,7 +133,7 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
               </View>
             </View>
           ))}
-        </ScrollView>
+        </ScrollView> */}
       </LinearGradient>
 
       {/* Main Content Area */}

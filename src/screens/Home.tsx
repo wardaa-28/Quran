@@ -190,7 +190,7 @@ const Home: React.FC = (): React.JSX.Element => {
 
         {/* Main Content Cards */}
         <View style={styles.mainCardsRow}>
-          <TouchableOpacity onPress={() => navigation.navigate('ListenQuran')}>
+          <TouchableOpacity onPress={() => navigation.navigate('RamzanAshras')}>
             <SafeLinearGradient
               colors={[HomeGradients.listenQuran.start, HomeGradients.listenQuran.end]}
               start={{ x: 0, y: 0 }}
@@ -198,19 +198,19 @@ const Home: React.FC = (): React.JSX.Element => {
               style={[styles.mainCard, styles.listenQuranCard]}>
               <View style={styles.mainCardIcon}>
                 <Image
-                  source={require('../assets/images/listenQuran.png')}
+                  source={require('../assets/images/ramzan.png')}
                   style={styles.mainCardImage}
                   resizeMode="contain"
                 />
               </View>
-              <Text style={styles.mainCardTitle}>Listen Quran</Text>
+              <Text style={styles.mainCardTitle}>Ramzan</Text>
               <Text style={styles.mainCardDescription}>
                 Neque porro quisquam qui dolorem ipsum.
               </Text>
             </SafeLinearGradient>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('RamzanAshras')}>
+          <TouchableOpacity onPress={() => navigation.navigate('QuranMajeed')}>
             <SafeLinearGradient
               colors={[HomeGradients.quranMajeed.start, HomeGradients.quranMajeed.end]}
               start={{ x: 0, y: 0 }}
@@ -223,7 +223,7 @@ const Home: React.FC = (): React.JSX.Element => {
                   resizeMode="contain"
                 />
               </View>
-              <Text style={styles.mainCardTitle}>Ramzan</Text>
+              <Text style={styles.mainCardTitle}>Quran Majeed</Text>
               <Text style={styles.mainCardDescription}>
                 Neque porro quisquam qui dolorem ipsum.
               </Text>

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
-
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 // Import all surahs
 import { surahAlFatihah } from '../constants/surah/fatiha';
 import { surahAlBaqarah } from '../constants/surah/baqarah';
@@ -353,7 +353,7 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
                                             color: isBooked ? '#FF0000' : '#29A464',
                                             fontSize: 20,
                                         }}>
-                                        {isBooked ? '❤️' : '♥'}
+                                        {isBooked ? <FontAwesome name={'heart'} size={20} color={'green'}/> : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
                                     </Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.iconButton}>
