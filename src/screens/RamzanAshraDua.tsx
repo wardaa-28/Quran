@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
-  Alert,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/Stack';
 import { saveBookmark, isBookmarked, removeBookmark } from '../utils/bookmarkStorage';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Toast from 'react-native-toast-message';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -129,7 +129,12 @@ const RamzanAshraDua: React.FC = (): React.JSX.Element => {
           newSet.delete(key);
           return newSet;
         });
-        Alert.alert('Success', 'Bookmark removed');
+        Toast.show({
+          type: 'success',
+          text1: 'Bookmark removed',
+          position: 'top',
+          visibilityTime: 2000,
+        });
       }
     } else {
       // Add bookmark
@@ -144,9 +149,19 @@ const RamzanAshraDua: React.FC = (): React.JSX.Element => {
 
       if (success) {
         setBookmarkedItems((prev) => new Set(prev).add(key));
-        Alert.alert('Success', 'Bookmark saved');
+        Toast.show({
+          type: 'success',
+          text1: 'Bookmark saved',
+          position: 'top',
+          visibilityTime: 2000,
+        });
       } else {
-        Alert.alert('Info', 'Already bookmarked');
+        Toast.show({
+          type: 'info',
+          text1: 'Already bookmarked',
+          position: 'top',
+          visibilityTime: 2000,
+        });
       }
     }
   };

@@ -8,6 +8,7 @@
 import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Toast from 'react-native-toast-message';
 import AppStack from './src/navigation/Stack';
 import ErrorBoundary from './src/components/ErrorBoundary';
 
@@ -19,6 +20,7 @@ function App(): React.JSX.Element {
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         <AppStack />
+        <Toast />
     </SafeAreaProvider>
     </ErrorBoundary>
   );

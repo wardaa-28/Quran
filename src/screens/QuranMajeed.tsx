@@ -14,6 +14,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ScreensColors, HomeGradients } from '../constants/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import { getBookmarks, Bookmark } from '../utils/bookmarkStorage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const colors = ScreensColors.screen1;
@@ -229,7 +230,7 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
                           <Text style={styles.bookmarkTitle}>{bookmark.title || bookmark.surahName}</Text>
                           <Text style={styles.bookmarkReference}>{bookmark.reference}</Text>
                         </View>
-                        <Text style={styles.bookmarkHeart}>❤️</Text>
+                        <FontAwesome name={'heart'} size={20} color={'green'}/>
                       </View>
                       <View style={styles.bookmarkCardBody}>
                         <Text style={styles.bookmarkArabic}>{bookmark.arabic}</Text>

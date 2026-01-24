@@ -6,11 +6,11 @@ import {
     TouchableOpacity,
     ScrollView,
     Image,
-    Alert,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Toast from 'react-native-toast-message';
 // Import all surahs
 import { surahAlFatihah } from '../constants/surah/fatiha';
 import { surahAlBaqarah } from '../constants/surah/baqarah';
@@ -287,7 +287,12 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
                     newSet.delete(key);
                     return newSet;
                 });
-                Alert.alert('Success', 'Bookmark removed');
+                Toast.show({
+                    type: 'success',
+                    text1: 'Bookmark removed',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             }
         } else {
             // Add bookmark
@@ -304,9 +309,19 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
 
             if (success) {
                 setBookmarkedVerses((prev) => new Set(prev).add(key));
-                Alert.alert('Success', 'Bookmark saved');
+                Toast.show({
+                    type: 'success',
+                    text1: 'Bookmark saved',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             } else {
-                Alert.alert('Info', 'Already bookmarked');
+                Toast.show({
+                    type: 'info',
+                    text1: 'Already bookmarked',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             }
         }
     };
@@ -356,9 +371,9 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
                                         {isBooked ? <FontAwesome name={'heart'} size={20} color={'green'}/> : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
                                     </Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.iconButton}>
+                                {/* <TouchableOpacity style={styles.iconButton}>
                                     <Text style={{ color: '#29A464' }}>🔗</Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
                             </View>
                         </View>
 

@@ -72,7 +72,7 @@ const RamzanAshras: React.FC = (): React.JSX.Element => {
               })
             }>
             <SafeLinearGradient
-              colors={[HomeGradients.quranMajeed.start, HomeGradients.quranMajeed.end]}
+              colors={['#F0FCF0', '#E8F8E8']}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
               style={styles.ashraCard}>
@@ -86,7 +86,7 @@ const RamzanAshras: React.FC = (): React.JSX.Element => {
                   <Text style={styles.ashraDescription}>{ashra.description}</Text>
                 </View>
                 <Image
-                  source={require('../assets/images/quranPak.png')}
+                  source={require('../assets/images/ramzan.png')}
                   style={styles.ashraIcon}
                   resizeMode="contain"
                 />
@@ -148,10 +148,11 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   ashraCard: {
-    borderRadius: 16,
-    padding: 20,
-    marginBottom: 15,
-    minHeight: 120,
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#E6F4EA',
   },
   ashraCardContent: {
     flexDirection: 'row',
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    backgroundColor: '#7DE7A9',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 15,
@@ -177,24 +178,25 @@ const styles = StyleSheet.create({
   ashraName: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: '#0F261C',
     marginBottom: 5,
   },
   ashraNameUrdu: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#FFFFFF',
+    color: '#29A464',
     marginBottom: 5,
   },
   ashraDescription: {
     fontSize: 14,
-    color: '#FFFFFF',
-    opacity: 0.9,
+    color: '#333',
+    opacity: 0.8,
   },
   ashraIcon: {
     width: 60,
     height: 60,
-    opacity: 0.3,
+    tintColor: '#29A464',
+    opacity: 0.5,
   },
 });
 

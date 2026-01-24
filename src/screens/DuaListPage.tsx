@@ -6,11 +6,11 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
-    Alert,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { duasData } from '../constants/duasData';
 import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
+import Toast from 'react-native-toast-message';
 
 const DuaListPage: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
@@ -81,7 +81,12 @@ const DuaListPage: React.FC = (): React.JSX.Element => {
                     newSet.delete(key);
                     return newSet;
                 });
-                Alert.alert('Success', 'Bookmark removed');
+                Toast.show({
+                    type: 'success',
+                    text1: 'Bookmark removed',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             }
         } else {
             // Add bookmark
@@ -96,9 +101,19 @@ const DuaListPage: React.FC = (): React.JSX.Element => {
 
             if (success) {
                 setBookmarkedItems((prev) => new Set(prev).add(key));
-                Alert.alert('Success', 'Bookmark saved');
+                Toast.show({
+                    type: 'success',
+                    text1: 'Bookmark saved',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             } else {
-                Alert.alert('Info', 'Already bookmarked');
+                Toast.show({
+                    type: 'info',
+                    text1: 'Already bookmarked',
+                    position: 'top',
+                    visibilityTime: 2000,
+                });
             }
         }
     };
