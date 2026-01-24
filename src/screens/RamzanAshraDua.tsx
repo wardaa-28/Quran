@@ -12,6 +12,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/Stack';
 import { saveBookmark, isBookmarked, removeBookmark } from '../utils/bookmarkStorage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -195,8 +196,8 @@ const RamzanAshraDua: React.FC = (): React.JSX.Element => {
                       fontSize: 20,
                     }}>
                     {bookmarkedItems.has(`${item.arabic}-${item.reference}`)
-                      ? '❤️'
-                      : '♥'}
+                      ? <FontAwesome name={'heart'} size={20} color={'green'}/>
+                      : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.actionIcon}>
