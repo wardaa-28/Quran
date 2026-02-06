@@ -65,20 +65,20 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete }): Reac
         </View>
       ),
     },
-    {
-      id: 3,
-      title: 'Qibla Finder',
-      description: 'Accurate Salah timings, daily duas, and Quran tools for your worship.',
-      illustration: (
-        <View style={styles.illustrationContainer}>
-          <Image
-            source={require('../assets/images/finder.png')}
-            style={styles.illustrationImage}
-            resizeMode="contain"
-          />
-        </View>
-      ),
-    },
+    // {
+    //   id: 3,
+    //   title: 'Qibla Finder',
+    //   description: 'Accurate Salah timings, daily duas, and Quran tools for your worship.',
+    //   illustration: (
+    //     <View style={styles.illustrationContainer}>
+    //       <Image
+    //         source={require('../assets/images/finder.png')}
+    //         style={styles.illustrationImage}
+    //         resizeMode="contain"
+    //       />
+    //     </View>
+    //   ),
+    // },
     {
       id: 4,
       title: 'Salah Time',

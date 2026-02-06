@@ -33,14 +33,17 @@ const colors = ScreensColors.screen1;
 const Home: React.FC = (): React.JSX.Element => {
   const navigation = useNavigation<NavigationProp>();
 
-  const [activePrayerIndex, setActivePrayerIndex] = React.useState<number>(2); // Asr is initially active
-  const [prayerTimes, setPrayerTimes] = React.useState([
-    { name: 'Fajr', time: '03:19 AM', image: require('../assets/images/fajar.png') },
-    { name: 'Zuhr', time: '03:19 AM', image: require('../assets/images/zuhar.png') },
-    { name: 'Asr', time: '03:19 AM', image: require('../assets/images/asar.png') },
-    { name: 'Magrib', time: '03:19 AM', image: require('../assets/images/magrib.png') },
-    { name: 'Isha', time: '8:52 PM', image: require('../assets/images/esha.png') },
+  const [activePrayerIndex, setActivePrayerIndex] = React.useState<number>(0);
+  const [prayerTimes, setPrayerTimes] = React.useState<
+    { name: string; time: string; image: any; date?: Date }[]
+  >([
+    { name: 'Fajr', time: '--:-- --', image: require('../assets/images/fajar.png') },
+    { name: 'Zuhr', time: '--:-- --', image: require('../assets/images/zuhar.png') },
+    { name: 'Asr', time: '--:-- --', image: require('../assets/images/asar.png') },
+    { name: 'Magrib', time: '--:-- --', image: require('../assets/images/magrib.png') },
+    { name: 'Isha', time: '--:-- --', image: require('../assets/images/esha.png') },
   ]);
+  const [prayerDates, setPrayerDates] = React.useState<Date[]>([]); // Store raw dates for comparison
 
   // Get current date in format: DD-MMM-YY
   const getCurrentDate = (): string => {
@@ -63,29 +66,56 @@ const Home: React.FC = (): React.JSX.Element => {
     return `${hours.toString().padStart(2, '0')}:${minutesStr} ${ampm}`;
   };
 
-  // Calculate prayer times for Lahore, Pakistan
+  // Which prayer is currently active? (Prayer times are for Lahore, Pakistan)
+  const getCurrentPrayerIndex = (dates: Date[]): number => {
+    if (dates.length < 5) return 0;
+    const now = new Date(); // current moment; adhan dates are absolute times for Lahore
+    const [fajr, zuhr, asr, maghrib, isha] = dates;
+    if (now < fajr) return 4; // Before Fajr -> last was Isha
+    if (now < zuhr) return 0; // Fajr
+    if (now < asr) return 1;  // Zuhr
+    if (now < maghrib) return 2; // Asr
+    if (now < isha) return 3;   // Maghrib
+    return 4; // Isha
+  };
+
+  // Calculate prayer times for Lahore, Pakistan (Karachi method)
   const calculatePrayerTimes = (): void => {
-    // Lahore coordinates: 31.5204° N, 74.3587° E
     const coordinates = new Coordinates(31.5204, 74.3587);
     const date = new Date();
-    
-    // Using Karachi calculation method (commonly used in Pakistan)
     const params = CalculationMethod.Karachi();
     const prayerTimesObj = new PrayerTimes(coordinates, date, params);
 
+    const fajr = prayerTimesObj.fajr;
+    const dhuhr = prayerTimesObj.dhuhr;
+    const asr = prayerTimesObj.asr;
+    const maghrib = prayerTimesObj.maghrib;
+    const isha = prayerTimesObj.isha;
+
+    const dates = [fajr, dhuhr, asr, maghrib, isha];
+    setPrayerDates(dates);
     setPrayerTimes([
-      { name: 'Fajr', time: formatTime(prayerTimesObj.fajr), image: require('../assets/images/fajar.png') },
-      { name: 'Zuhr', time: formatTime(prayerTimesObj.dhuhr), image: require('../assets/images/zuhar.png') },
-      { name: 'Asr', time: formatTime(prayerTimesObj.asr), image: require('../assets/images/asar.png') },
-      { name: 'Magrib', time: formatTime(prayerTimesObj.maghrib), image: require('../assets/images/magrib.png') },
-      { name: 'Isha', time: formatTime(prayerTimesObj.isha), image: require('../assets/images/esha.png') },
+      { name: 'Fajr', time: formatTime(fajr), image: require('../assets/images/fajar.png') },
+      { name: 'Zuhr', time: formatTime(dhuhr), image: require('../assets/images/zuhar.png') },
+      { name: 'Asr', time: formatTime(asr), image: require('../assets/images/asar.png') },
+      { name: 'Magrib', time: formatTime(maghrib), image: require('../assets/images/magrib.png') },
+      { name: 'Isha', time: formatTime(isha), image: require('../assets/images/esha.png') },
     ]);
+    setActivePrayerIndex(getCurrentPrayerIndex(dates));
   };
 
   React.useEffect(() => {
-    console.log('Home screen mounted');
     calculatePrayerTimes();
   }, []);
+
+  // Update active prayer every minute (Pakistan time)
+  React.useEffect(() => {
+    if (prayerDates.length < 5) return;
+    const interval = setInterval(() => {
+      setActivePrayerIndex(getCurrentPrayerIndex(prayerDates));
+    }, 60000); // every 1 minute
+    return () => clearInterval(interval);
+  }, [prayerDates]);
 
   const handlePrayerPress = (index: number): void => {
     setActivePrayerIndex(index);

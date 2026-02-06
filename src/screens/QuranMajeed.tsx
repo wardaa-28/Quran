@@ -31,6 +31,7 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
   const navigation = useNavigation<NavigationProp>();
   const [activeTab, setActiveTab] = useState<'Parah' | 'Surah' | 'Bookmark'>('Parah');
   const [bookmarkedAyahs, setBookmarkedAyahs] = useState<Bookmark[]>([]);
+  const [selectedParah, setSelectedParah] = useState<number | null>(null);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -86,6 +87,45 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
     { number: 30, english: "Amma Yatasa'aloon", arabic: 'عَمَّ يَتَسَاءَلُونَ' },
   ];
 
+  // Mapping of Parah numbers to their surah IDs
+  const parahToSurahs: { [key: number]: number[] } = {
+    1: [1, 2], // Al-Fatiha, Al-Baqarah (partial)
+    2: [2], // Al-Baqarah (partial)
+    3: [2, 3], // Al-Baqarah (partial), Aal-Imran (partial)
+    4: [3, 4], // Aal-Imran (partial), An-Nisa (partial)
+    5: [4], // An-Nisa (partial)
+    6: [4, 5], // An-Nisa (partial), Al-Maidah (partial)
+    7: [5], // Al-Maidah (partial)
+    8: [5, 6], // Al-Maidah (partial), Al-An'am (partial)
+    9: [6, 7], // Al-An'am (partial), Al-A'raf (partial)
+    10: [7, 8], // Al-A'raf (partial), Al-Anfal
+    11: [8, 9], // Al-Anfal (partial), At-Tawbah (partial)
+    12: [9, 10, 11], // At-Tawbah (partial), Yunus, Hud (partial)
+    13: [11, 12], // Hud (partial), Yusuf
+    14: [12, 13, 14, 15], // Yusuf (partial), Ar-Ra'd, Ibrahim, Al-Hijr (partial)
+    15: [15, 16, 17], // Al-Hijr (partial), An-Nahl, Al-Isra (partial)
+    16: [17, 18], // Al-Isra (partial), Al-Kahf
+    17: [18, 19, 20], // Al-Kahf (partial), Maryam, Ta-Ha (partial)
+    18: [20, 21, 22], // Ta-Ha (partial), Al-Anbiya, Al-Hajj (partial)
+    19: [22, 23, 24], // Al-Hajj (partial), Al-Mu'minun, An-Nur (partial)
+    20: [24, 25, 26, 27], // An-Nur (partial), Al-Furqan, Ash-Shu'ara, An-Naml (partial)
+    21: [27, 28, 29], // An-Naml (partial), Al-Qasas, Al-Ankabut (partial)
+    22: [29, 30, 31, 32], // Al-Ankabut (partial), Ar-Rum, Luqman, As-Sajdah
+    23: [33, 34, 35, 36], // Al-Ahzab, Saba, Fatir, Ya-Sin (partial)
+    24: [36, 37, 38], // Ya-Sin (partial), As-Saffat, Sad (partial)
+    25: [38, 39, 40], // Sad (partial), Az-Zumar, Ghafir (partial)
+    26: [40, 41, 42, 43], // Ghafir (partial), Fussilat, Ash-Shura, Az-Zukhruf (partial)
+    27: [43, 44, 45, 46], // Az-Zukhruf (partial), Ad-Dukhan, Al-Jathiyah, Al-Ahqaf
+    28: [46, 47, 48, 49, 50], // Al-Ahqaf (partial), Muhammad, Al-Fath, Al-Hujurat, Qaf (partial)
+    29: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77], // Qaf onwards
+    30: [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114], // Last surahs
+  };
+
+  const getSurahsForParah = (parahNumber: number) => {
+    const surahIds = parahToSurahs[parahNumber] || [];
+    return surahList.filter(surah => surahIds.includes(surah.id));
+  };
+
 
 
 
@@ -102,10 +142,10 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
         <View style={styles.header}>
           <TouchableOpacity
             style={styles.backButton}
-            onPress={() => navigation.goBack()}>
-            <View>
-              <Image source={require('../assets/images/back.png')} style={styles.backIconImage} />
-            </View>
+            onPress={() => navigation.goBack()}
+            activeOpacity={0.7}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Image source={require('../assets/images/back.png')} style={styles.backIconImage} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Quran Majeed</Text>
           <View style={styles.headerRight} />
@@ -143,17 +183,26 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
         <View style={styles.tabContainer}>
           <TouchableOpacity
             style={[styles.tab, activeTab === 'Parah' && styles.tabActive]}
-            onPress={() => setActiveTab('Parah')}>
+            onPress={() => {
+              setActiveTab('Parah');
+              setSelectedParah(null);
+            }}>
             <Text style={[styles.tabText, activeTab === 'Parah' && styles.tabTextActive]}>Parah</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.tab, activeTab === 'Surah' && styles.tabActive]}
-            onPress={() => setActiveTab('Surah')}>
+            onPress={() => {
+              setActiveTab('Surah');
+              setSelectedParah(null);
+            }}>
             <Text style={[styles.tabText, activeTab === 'Surah' && styles.tabTextActive]}>Surah</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.tab, activeTab === 'Bookmark' && styles.tabActive]}
-            onPress={() => setActiveTab('Bookmark')}>
+            onPress={() => {
+              setActiveTab('Bookmark');
+              setSelectedParah(null);
+            }}>
             <Text style={[styles.tabText, activeTab === 'Bookmark' && styles.tabTextActive]}>Bookmark</Text>
           </TouchableOpacity>
         </View>
@@ -162,18 +211,57 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
         <ScrollView style={styles.contentContainer} showsVerticalScrollIndicator={false}>
           {activeTab === 'Parah' && (
             <>
-              {parahList.map((parah) => (
-                <View key={parah.number} style={styles.parahCard}>
-                  <View style={styles.parahNumberCircle}>
-                    <Text style={styles.parahNumber}>{parah.number}</Text>
-                  </View>
-                  <View style={styles.parahTextContainer}>
-                    <Text style={styles.parahEnglish}>{parah.english}</Text>
-                    <Text style={styles.parahSubtitle}>Parah {parah.number}</Text>
-                  </View>
-                  <Text style={styles.parahArabic}>{parah.arabic}</Text>
-                </View>
-              ))}
+              {selectedParah === null ? (
+                <>
+                  {parahList.map((parah) => (
+                    <TouchableOpacity
+                      key={parah.number}
+                      style={styles.parahCard}
+                      onPress={() => setSelectedParah(parah.number)}>
+                      <View style={styles.parahNumberCircle}>
+                        <Text style={styles.parahNumber}>{parah.number}</Text>
+                      </View>
+                      <View style={styles.parahTextContainer}>
+                        <Text style={styles.parahEnglish}>{parah.english}</Text>
+                        <Text style={styles.parahSubtitle}>Parah {parah.number}</Text>
+                      </View>
+                      <Text style={styles.parahArabic}>{parah.arabic}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </>
+              ) : (
+                <>
+                  <TouchableOpacity
+                    style={styles.backToParahButton}
+                    onPress={() => setSelectedParah(null)}>
+                    <Image
+                      source={require('../assets/images/back.png')}
+                      style={styles.backIconImage}
+                    />
+                    <Text style={styles.backToParahText}>
+                      Back to Parah List
+                    </Text>
+                  </TouchableOpacity>
+                  {getSurahsForParah(selectedParah).map((surah) => (
+                    <TouchableOpacity
+                      key={surah.id}
+                      style={styles.surahCard}
+                      onPress={() => {
+                        navigation.navigate('SurahDetail', { surah });
+                      }}
+                    >
+                      <View>
+                        <Image source={require('../assets/images/playicon.png')} style={styles.playIconImage} />
+                      </View>
+                      <View style={styles.surahTextContainer}>
+                        <Text style={styles.surahEnglish}>{surah.nameEnglish}</Text>
+                        <Text style={styles.surahSubtitle}>{surah.meaning}</Text>
+                      </View>
+                      <Text style={styles.surahArabic}>{surah.nameArabic}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </>
+              )}
               <View style={{ height: 100 }} />
             </>
           )}
@@ -573,6 +661,19 @@ const styles = StyleSheet.create({
     color: '#555',
     textAlign: 'center',
     lineHeight: 18,
+  },
+  backToParahButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginBottom: 15,
+  },
+  backToParahText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#29A464',
+    marginLeft: 10,
   },
 });
 

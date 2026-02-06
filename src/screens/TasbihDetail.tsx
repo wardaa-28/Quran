@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import { getTasbihCount, saveTasbihCount, resetTasbihCount } from '../utils/tasbihStorage';
 
 const { width } = Dimensions.get('window');
 
@@ -19,6 +20,25 @@ const TasbihDetail: React.FC = (): React.JSX.Element => {
 
     const [count, setCount] = useState(0);
     const targetCount = tasbih?.count || 33;
+    const tasbihId = tasbih?.id;
+
+    // Load saved count when component mounts
+    useEffect(() => {
+        const loadSavedCount = async () => {
+            if (tasbihId) {
+                const savedCount = await getTasbihCount(tasbihId);
+                setCount(savedCount);
+            }
+        };
+        loadSavedCount();
+    }, [tasbihId]);
+
+    // Save count whenever it changes
+    useEffect(() => {
+        if (tasbihId !== undefined) {
+            saveTasbihCount(tasbihId, count);
+        }
+    }, [count, tasbihId]);
 
     const handleIncrement = () => {
         if (count < targetCount) {
@@ -26,8 +46,11 @@ const TasbihDetail: React.FC = (): React.JSX.Element => {
         }
     };
 
-    const handleReset = () => {
+    const handleReset = async () => {
         setCount(0);
+        if (tasbihId !== undefined) {
+            await resetTasbihCount(tasbihId);
+        }
     };
 
     return (

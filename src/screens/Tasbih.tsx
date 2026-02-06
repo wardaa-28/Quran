@@ -9,8 +9,10 @@ import {
     Modal,
     TextInput,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import { getTasbihCount } from '../utils/tasbihStorage';
+import { getTasbihList, saveTasbihList, TasbihItem } from '../utils/tasbihListStorage';
 
 const Tasbih: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
@@ -19,9 +21,10 @@ const Tasbih: React.FC = (): React.JSX.Element => {
     const [selectedCount, setSelectedCount] = React.useState(33);
     const [title, setTitle] = React.useState('');
     const [zikr, setZikr] = React.useState('');
+    const [tasbihCounts, setTasbihCounts] = React.useState<{ [key: number | string]: number }>({});
 
-    // Initial data as state
-    const [tasbihList, setTasbihList] = React.useState([
+    // Default initial tasbih list
+    const defaultTasbihList: TasbihItem[] = [
         {
             id: 1,
             arabic: 'الحمد لله',
@@ -46,10 +49,55 @@ const Tasbih: React.FC = (): React.JSX.Element => {
             colors: ['#E7F9EF', '#FCFFFD'],
             buttonColor: '#B6E8BD',
         },
-    ]);
+    ];
 
-    const handleAddTasbih = () => {
-        const newTasbih = {
+    const [tasbihList, setTasbihList] = React.useState<TasbihItem[]>(defaultTasbihList);
+
+    // Load tasbih list from storage on mount
+    React.useEffect(() => {
+        const loadTasbihList = async () => {
+            const savedList = await getTasbihList();
+            if (savedList.length > 0) {
+                setTasbihList(savedList);
+            } else {
+                // If no saved list, use default and save it
+                setTasbihList(defaultTasbihList);
+                await saveTasbihList(defaultTasbihList);
+            }
+        };
+        loadTasbihList();
+    }, []);
+
+    // Load tasbih list and counts when screen comes into focus
+    useFocusEffect(
+        React.useCallback(() => {
+            const loadData = async () => {
+                // Load tasbih list from storage
+                const savedList = await getTasbihList();
+                if (savedList.length > 0) {
+                    setTasbihList(savedList);
+                }
+                
+                // Load saved counts
+                const counts: { [key: number | string]: number } = {};
+                const listToUse = savedList.length > 0 ? savedList : tasbihList;
+                for (const item of listToUse) {
+                    const savedCount = await getTasbihCount(item.id);
+                    counts[item.id] = savedCount;
+                }
+                setTasbihCounts(counts);
+            };
+            loadData();
+        }, [])
+    );
+
+    const handleAddTasbih = async () => {
+        if (!zikr && !title) {
+            // Don't add if both fields are empty
+            return;
+        }
+
+        const newTasbih: TasbihItem = {
             id: Date.now(),
             arabic: zikr || title || 'New Tasbih', // Fallback
             date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit' }).replace(/ /g, '-'),
@@ -57,7 +105,13 @@ const Tasbih: React.FC = (): React.JSX.Element => {
             colors: ['#E7F9EF', '#FCFFFD'],
             buttonColor: '#B6E8BD',
         };
-        setTasbihList([...tasbihList, newTasbih]);
+        
+        const updatedList = [...tasbihList, newTasbih];
+        setTasbihList(updatedList);
+        
+        // Save to local storage
+        await saveTasbihList(updatedList);
+        
         setModalVisible(false);
         setTitle('');
         setZikr('');
@@ -70,8 +124,13 @@ const Tasbih: React.FC = (): React.JSX.Element => {
             transparent={true}
             visible={isModalVisible}
             onRequestClose={() => setModalVisible(false)}>
-            <View style={styles.modalOverlay}>
-                <View style={styles.modalContainer}>
+            <TouchableOpacity 
+                style={styles.modalOverlay}
+                activeOpacity={1}
+                onPress={() => setModalVisible(false)}>
+                <View 
+                    style={styles.modalContainer}
+                    onStartShouldSetResponder={() => true}>
                     <View style={styles.modalHeaderBar} />
                     <Text style={styles.modalTitle}>Create Tasbih</Text>
 
@@ -120,7 +179,7 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                         <Text style={styles.continueButtonText}>Continue</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </TouchableOpacity>
         </Modal>
     );
 
@@ -143,7 +202,9 @@ const Tasbih: React.FC = (): React.JSX.Element => {
             {/* Tasbih List */}
             <ScrollView
                 style={styles.contentContainer}
-                showsVerticalScrollIndicator={false}>
+                contentContainerStyle={styles.scrollContent}
+                showsVerticalScrollIndicator={false}
+                nestedScrollEnabled={true}>
                 {tasbihList.map((item) => (
                     <LinearGradient
                         key={item.id}
@@ -160,8 +221,10 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                             <Text style={styles.dateText}>{item.date}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.countButton, { backgroundColor: item.buttonColor }]}>
-                            <Text style={styles.countText}>Count {item.count}</Text>
+                        <TouchableOpacity 
+                            style={[styles.countButton, { backgroundColor: item.buttonColor }]}
+                            onPress={() => (navigation as any).navigate('TasbihDetail', { tasbih: item })}>
+                            <Text style={styles.countText}>Count {tasbihCounts[item.id] ?? 0}/{item.count}</Text>
                             <View style={styles.arrowCircle}>
                                 <Text style={styles.arrowText}>{'>'}</Text>
                             </View>
@@ -172,11 +235,17 @@ const Tasbih: React.FC = (): React.JSX.Element => {
 
             {/* Add Tasbih Button */}
             <View style={styles.footer}>
-                <TouchableOpacity style={styles.addButton} onPress={() => setModalVisible(true)}>
+                <TouchableOpacity 
+                    style={styles.addButton} 
+                    onPress={() => setModalVisible(true)}
+                    activeOpacity={0.7}>
                     <Text style={styles.plusIcon}>+</Text>
                 </TouchableOpacity>
                 <Text style={styles.addButtonLabel}>Add Tasbih</Text>
             </View>
+
+            {/* Modal */}
+            {renderModal()}
         </View>
     );
 };
@@ -214,7 +283,11 @@ const styles = StyleSheet.create({
         color: '#0F261C',
     },
     contentContainer: {
+        flex: 1,
         paddingHorizontal: 20,
+    },
+    scrollContent: {
+        paddingBottom: 150, // Add padding to prevent content from being hidden behind footer
     },
     card: {
         borderRadius: 12,
@@ -273,7 +346,9 @@ const styles = StyleSheet.create({
     footer: {
         alignItems: 'center',
         marginBottom: 30,
-        marginTop: 20
+        backgroundColor: '#FFFFFF',
+        paddingTop: 10,
+        paddingBottom: 10,
     },
     addButton: {
         width: 60,
