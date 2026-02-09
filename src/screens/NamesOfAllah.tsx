@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -7,14 +7,79 @@ import {
     Image,
     ScrollView,
     FlatList,
+    Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { namesOfAllah } from '../constants/namesOfAllah';
+import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const NamesOfAllah: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
+    const [bookmarkedItems, setBookmarkedItems] = useState<Set<string>>(new Set());
 
-    const renderName = ({ item, index }: { item: any; index: number }) => (
+    useEffect(() => {
+        loadBookmarkStatus();
+    }, []);
+
+    const loadBookmarkStatus = async () => {
+        const bookmarked = new Set<string>();
+        for (const name of namesOfAllah) {
+            const reference = `Names of Allah - ${name.translation}`;
+            const isBooked = await isBookmarked(name.arabic, reference);
+            if (isBooked) {
+                bookmarked.add(`${name.arabic}-${reference}`);
+            }
+        }
+        setBookmarkedItems(bookmarked);
+    };
+
+    const handleBookmarkToggle = async (item: any) => {
+        const reference = `Names of Allah - ${item.translation}`;
+        const key = `${item.arabic}-${reference}`;
+        const currentlyBookmarked = bookmarkedItems.has(key);
+
+        if (currentlyBookmarked) {
+            // Remove bookmark
+            const allBookmarks = await getBookmarks();
+            const bookmarkToRemove = allBookmarks.find(
+                (b) => b.arabic === item.arabic && b.reference === reference
+            );
+            if (bookmarkToRemove) {
+                await removeBookmark(bookmarkToRemove.id);
+                setBookmarkedItems((prev) => {
+                    const newSet = new Set(prev);
+                    newSet.delete(key);
+                    return newSet;
+                });
+                Alert.alert('Success', 'Bookmark removed');
+            }
+        } else {
+            // Add bookmark
+            const success = await saveBookmark({
+                type: 'dua',
+                arabic: item.arabic,
+                transliteration: item.transliteration,
+                translation: item.translation,
+                reference: reference,
+                title: `Names of Allah - ${item.translation}`,
+            });
+
+            if (success) {
+                setBookmarkedItems((prev) => new Set(prev).add(key));
+                Alert.alert('Success', 'Bookmark saved');
+            } else {
+                Alert.alert('Info', 'Already bookmarked');
+            }
+        }
+    };
+
+    const renderName = ({ item, index }: { item: any; index: number }) => {
+        const reference = `Names of Allah - ${item.translation}`;
+        const key = `${item.arabic}-${reference}`;
+        const isBooked = bookmarkedItems.has(key);
+
+        return (
         <View style={styles.card}>
             <View style={styles.cardHeader}>
                 <View style={styles.countBadge}>
@@ -24,11 +89,14 @@ const NamesOfAllah: React.FC = (): React.JSX.Element => {
                     <TouchableOpacity style={styles.actionIcon}>
                         <Image source={require('../assets/images/speaker.png')} style={[styles.iconImage, { tintColor: '#29A464' }]} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.actionIcon}>
-                        <Text style={{ color: '#29A464' }}>♥</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.actionIcon}>
-                        <Text style={{ color: '#29A464' }}>🔗</Text>
+                    <TouchableOpacity
+                        style={styles.actionIcon}
+                        onPress={() => handleBookmarkToggle(item)}>
+                        <FontAwesome
+                            name={isBooked ? 'heart' : 'heart-o'}
+                            size={20}
+                            color={isBooked ? '#FF0000' : '#29A464'}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -40,7 +108,8 @@ const NamesOfAllah: React.FC = (): React.JSX.Element => {
                 <Text style={styles.meaningText}>{item.meaning}</Text>
             </View>
         </View>
-    );
+        );
+    };
 
     return (
         <View style={styles.container}>

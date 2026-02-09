@@ -33,7 +33,13 @@ const DuaCategories: React.FC = (): React.JSX.Element => {
     const renderItem = ({ item }: { item: any }) => (
         <TouchableOpacity
             style={styles.card}
-            onPress={() => (navigation as any).navigate('DuaTopicList', { categoryTitle: item.title })}
+            onPress={() => {
+                if (item.title === 'Names of Allah') {
+                    (navigation as any).navigate('NamesOfAllah');
+                } else {
+                    (navigation as any).navigate('DuaTopicList', { categoryTitle: item.title });
+                }
+            }}
         >
             <Image source={item.image} style={styles.cardImage} resizeMode="contain" />
             <Text style={styles.cardTitle}>{item.title}</Text>

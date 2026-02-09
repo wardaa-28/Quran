@@ -17,18 +17,6 @@ const DuaTopicList: React.FC = (): React.JSX.Element => {
 
     // Find the category data
     const categoryData = duasData.find(cat => cat.categoryTitle === categoryTitle);
-    
-    // If "Names of Allah" is clicked, navigate directly to Names of Allah screen
-    React.useEffect(() => {
-        if (categoryTitle === 'Names of Allah') {
-            (navigation as any).navigate('NamesOfAllah');
-        }
-    }, [categoryTitle, navigation]);
-
-    // If "Names of Allah", return null as we're navigating away
-    if (categoryTitle === 'Names of Allah') {
-        return null;
-    }
 
     // Get topics for this category
     const topics = categoryData?.topics || [];

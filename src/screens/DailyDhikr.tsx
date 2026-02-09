@@ -73,6 +73,46 @@ const DailyDhikr: React.FC = (): React.JSX.Element => {
             transliteration: 'Allahu Akbar',
             translation: 'Allah is the Greatest.',
             reference: 'Sunnah'
+        },
+        {
+            id: 8,
+            count: 1,
+            arabic: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ',
+            transliteration: 'Ya Hayyu Ya Qayyum birahmatika astaghith',
+            translation: 'O Ever-Living, O Self-Sustaining, by Your mercy I seek help.',
+            reference: 'At-Tirmidhi'
+        },
+        {
+            id: 9,
+            count: 100,
+            arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+            transliteration: 'La hawla wa la quwwata illa billah',
+            translation: 'There is no power nor strength except with Allah.',
+            reference: 'Bukhari & Muslim'
+        },
+        {
+            id: 10,
+            count: 1,
+            arabic: 'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
+            transliteration: 'Allahumma anta rabbi la ilaha illa anta khalaqtani wa ana abduka wa ana ala ahdika wa wa\'dika mastata\'tu a\'oodhu bika min sharri ma sana\'tu aboo\'u laka bini\'matika alayya wa aboo\'u laka bidhanbi faghfirli fa innahu la yaghfirudh-dhunuba illa anta',
+            translation: 'O Allah, You are my Lord. There is no deity except You. You created me, and I am Your servant. I am upon Your covenant and promise as much as I am able. I seek refuge in You from the evil of what I have done. I acknowledge Your favor upon me and I acknowledge my sin, so forgive me, for indeed none forgives sins except You.',
+            reference: 'Bukhari'
+        },
+        {
+            id: 11,
+            count: 1,
+            arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ',
+            transliteration: 'Allahumma inni as\'alukal-afwa wal-afiyah fid-dunya wal-akhirah',
+            translation: 'O Allah, I ask You for pardon and well-being in this world and the Hereafter.',
+            reference: 'Abu Dawud'
+        },
+        {
+            id: 12,
+            count: 100,
+            arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ',
+            transliteration: 'Subhanallahi wa bihamdihi adada khalqihi wa rida nafsihi wa zinata arshihi wa midada kalimatihi',
+            translation: 'Glory be to Allah and praise be to Him, by the number of His creation, by His pleasure, by the weight of His Throne, and by the extent of His words.',
+            reference: 'Muslim'
         }
     ];
 
@@ -132,6 +172,46 @@ const DailyDhikr: React.FC = (): React.JSX.Element => {
             transliteration: 'Rabbana atina fid dunya hasanatan wa fil akhirati hasanatan wa qina azaban naar',
             translation: 'Our Lord, give us good in this world and good in the Hereafter, and save us from the punishment of the Fire.',
             reference: 'Quran 2:201'
+        },
+        {
+            id: 8,
+            count: 1,
+            arabic: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ',
+            transliteration: 'Ya Hayyu Ya Qayyum birahmatika astaghith',
+            translation: 'O Ever-Living, O Self-Sustaining, by Your mercy I seek help.',
+            reference: 'At-Tirmidhi'
+        },
+        {
+            id: 9,
+            count: 100,
+            arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
+            transliteration: 'La ilaha illallahu wahdahu la shareeka lahu lahul-mulku wa lahul-hamdu wa huwa ala kulli shay\'in qadeer',
+            translation: 'There is no deity except Allah, alone, without partner. To Him belongs sovereignty and to Him belongs praise, and He is over all things competent.',
+            reference: 'Bukhari & Muslim'
+        },
+        {
+            id: 10,
+            count: 1,
+            arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ',
+            transliteration: 'Allahumma inni a\'oodhu bika minal-hammi wal-hazan wa a\'oodhu bika minal-ajzi wal-kasal wa a\'oodhu bika minal-jubni wal-bukhl wa a\'oodhu bika min ghalabatid-dayni wa qahrir-rijal',
+            translation: 'O Allah, I seek refuge in You from worry and grief, and I seek refuge in You from incapacity and laziness, and I seek refuge in You from cowardice and miserliness, and I seek refuge in You from being overcome by debt and being overpowered by men.',
+            reference: 'Abu Dawud'
+        },
+        {
+            id: 11,
+            count: 100,
+            arabic: 'سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَٰهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ',
+            transliteration: 'Subhanallahi walhamdulillahi wa la ilaha illallahu wallahu akbar',
+            translation: 'Glory be to Allah, and praise be to Allah, and there is no deity except Allah, and Allah is the Greatest.',
+            reference: 'Sunnah'
+        },
+        {
+            id: 12,
+            count: 1,
+            arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلًا مُتَقَبَّلًا',
+            transliteration: 'Allahumma inni as\'aluka ilman nafi\'an wa rizqan tayyiban wa amalan mutaqabbalan',
+            translation: 'O Allah, I ask You for beneficial knowledge, good provision, and acceptable deeds.',
+            reference: 'Ibn Majah'
         }
     ];
 
@@ -260,9 +340,6 @@ const DailyDhikr: React.FC = (): React.JSX.Element => {
                                     ) : (
                                         <FontAwesome name={'heart-o'} size={20} color={'#29A464'} />
                                     )}
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.actionIcon}>
-                                    <Text style={{ color: '#29A464' }}>🔗</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>

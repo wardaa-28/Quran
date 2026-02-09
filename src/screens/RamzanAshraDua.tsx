@@ -203,20 +203,11 @@ const RamzanAshraDua: React.FC = (): React.JSX.Element => {
                 <TouchableOpacity
                   style={styles.actionIcon}
                   onPress={() => handleBookmarkToggle(item)}>
-                  <Text
-                    style={{
-                      color: bookmarkedItems.has(`${item.arabic}-${item.reference}`)
-                        ? '#FF0000'
-                        : '#29A464',
-                      fontSize: 20,
-                    }}>
-                    {bookmarkedItems.has(`${item.arabic}-${item.reference}`)
-                      ? <FontAwesome name={'heart'} size={20} color={'green'}/>
-                      : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.actionIcon}>
-                  <Text style={{ color: '#29A464' }}>🔗</Text>
+                  <FontAwesome
+                    name={bookmarkedItems.has(`${item.arabic}-${item.reference}`) ? 'heart' : 'heart-o'}
+                    size={20}
+                    color="#29A464"
+                  />
                 </TouchableOpacity>
               </View>
             </View>

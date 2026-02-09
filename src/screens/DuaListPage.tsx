@@ -6,10 +6,12 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Alert,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { duasData } from '../constants/duasData';
 import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-toast-message';
 
 const DuaListPage: React.FC = (): React.JSX.Element => {
@@ -145,20 +147,11 @@ const DuaListPage: React.FC = (): React.JSX.Element => {
                                 <TouchableOpacity
                                     style={styles.actionIcon}
                                     onPress={() => handleBookmarkToggle(item)}>
-                                    <Text
-                                        style={{
-                                            color: bookmarkedItems.has(`${item.arabic}-${item.reference}`)
-                                                ? '#FF0000'
-                                                : '#29A464',
-                                            fontSize: 20,
-                                        }}>
-                                        {bookmarkedItems.has(`${item.arabic}-${item.reference}`)
-                                            ? '❤️'
-                                            : '♥'}
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.actionIcon}>
-                                    <Text style={{ color: '#29A464' }}>🔗</Text>
+                                    <FontAwesome
+                                        name={bookmarkedItems.has(`${item.arabic}-${item.reference}`) ? 'heart' : 'heart-o'}
+                                        size={20}
+                                        color={bookmarkedItems.has(`${item.arabic}-${item.reference}`) ? '#FF0000' : '#29A464'}
+                                    />
                                 </TouchableOpacity>
                             </View>
                         </View>

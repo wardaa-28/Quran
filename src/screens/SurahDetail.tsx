@@ -371,9 +371,6 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
                                         {isBooked ? <FontAwesome name={'heart'} size={20} color={'green'}/> : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
                                     </Text>
                                 </TouchableOpacity>
-                                {/* <TouchableOpacity style={styles.iconButton}>
-                                    <Text style={{ color: '#29A464' }}>🔗</Text>
-                                </TouchableOpacity> */}
                             </View>
                         </View>
 
