@@ -23,7 +23,7 @@ export type RootStackParamList = {
   Home: undefined;
   QuranMajeed: undefined;
   ListenQuran: undefined;
-  SurahDetail: { surah: any };
+  SurahDetail: { surah: any; scrollToAyahNumber?: number; source?: 'parah' | 'surah'; parahNumber?: number };
   Tasbih: undefined;
   TasbihDetail: { tasbih: any };
   DailyDhikr: undefined;

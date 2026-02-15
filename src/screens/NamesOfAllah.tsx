@@ -95,7 +95,7 @@ const NamesOfAllah: React.FC = (): React.JSX.Element => {
                         <FontAwesome
                             name={isBooked ? 'heart' : 'heart-o'}
                             size={20}
-                            color={isBooked ? '#FF0000' : '#29A464'}
+                            color="#29A464"
                         />
                     </TouchableOpacity>
                 </View>

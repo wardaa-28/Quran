@@ -150,7 +150,7 @@ const DuaListPage: React.FC = (): React.JSX.Element => {
                                     <FontAwesome
                                         name={bookmarkedItems.has(`${item.arabic}-${item.reference}`) ? 'heart' : 'heart-o'}
                                         size={20}
-                                        color={bookmarkedItems.has(`${item.arabic}-${item.reference}`) ? '#FF0000' : '#29A464'}
+                                        color="#29A464"
                                     />
                                 </TouchableOpacity>
                             </View>

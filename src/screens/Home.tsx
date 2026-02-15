@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SafeLinearGradient from '../components/SafeLinearGradient';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -32,6 +33,7 @@ const colors = ScreensColors.screen1;
 
 const Home: React.FC = (): React.JSX.Element => {
   const navigation = useNavigation<NavigationProp>();
+  const insets = useSafeAreaInsets();
 
   const [activePrayerIndex, setActivePrayerIndex] = React.useState<number>(0);
   const [prayerTimes, setPrayerTimes] = React.useState<
@@ -124,9 +126,10 @@ const Home: React.FC = (): React.JSX.Element => {
   return (
     <SafeLinearGradient
       colors={[HomeGradients.homeBackground.start, HomeGradients.homeBackground.end]}
-      style={styles.container}>
+      style={[styles.container, { paddingTop: insets.top }]}>
       <ScrollView
-        showsVerticalScrollIndicator={false}>
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}>
         {/* Location and Date Bar */}
         <View style={styles.locationBar}>
           <SafeLinearGradient

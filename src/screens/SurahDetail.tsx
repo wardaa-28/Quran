@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     View,
     Text,
@@ -7,8 +7,9 @@ import {
     ScrollView,
     Image,
 } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
 import { saveBookmark, isBookmarked, removeBookmark, getBookmarks } from '../utils/bookmarkStorage';
+import { saveReadingProgress } from '../utils/readingProgressStorage';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-toast-message';
 // Import all surahs
@@ -127,10 +128,14 @@ import { surahAlIkhlas } from '../constants/surah/ikhlas';
 import { surahAlFalaq } from '../constants/surah/falaq';
 import { surahAnNas } from '../constants/surah/nas';
 
+const ESTIMATED_VERSE_HEIGHT = 200;
+
 const SurahDetail: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
     const route = useRoute();
-    const { surah } = (route.params as any) || {};
+    const { surah, scrollToAyahNumber, source = 'surah', parahNumber } = (route.params as any) || {};
+    const scrollViewRef = useRef<ScrollView>(null);
+    const lastScrollY = useRef(0);
 
     // Map surah IDs to their data files
     const surahDataMap: { [key: number]: any[] } = {
@@ -257,6 +262,56 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
         loadBookmarkStatus();
     }, [currentSurahData]);
 
+    useEffect(() => {
+        if (scrollToAyahNumber && scrollViewRef.current && currentSurahData.length > 0) {
+            const index = currentSurahData.findIndex((v) => Number(v.ayah) === scrollToAyahNumber);
+            if (index >= 0) {
+                setTimeout(() => {
+                    scrollViewRef.current?.scrollTo({
+                        y: Math.max(0, index * ESTIMATED_VERSE_HEIGHT - 50),
+                        animated: true,
+                    });
+                }, 300);
+            }
+        }
+    }, [scrollToAyahNumber, currentSurahData]);
+
+    const saveProgress = React.useCallback(
+        (offsetY: number) => {
+            if (!surah || currentSurahData.length === 0) return;
+            const index = Math.floor(offsetY / ESTIMATED_VERSE_HEIGHT);
+            const clampedIndex = Math.max(0, Math.min(index, currentSurahData.length - 1));
+            const verse = currentSurahData[clampedIndex];
+            if (verse) {
+                saveReadingProgress({
+                    source,
+                    parahNumber,
+                    surahId: surah.id,
+                    surah,
+                    ayahNumber: Number(verse.ayah),
+                });
+            }
+        },
+        [surah, currentSurahData, source, parahNumber]
+    );
+
+    const handleScroll = React.useCallback(
+        (e: any) => {
+            const offsetY = e.nativeEvent?.contentOffset?.y ?? 0;
+            lastScrollY.current = offsetY;
+            saveProgress(offsetY);
+        },
+        [saveProgress]
+    );
+
+    useFocusEffect(
+        React.useCallback(() => {
+            return () => {
+                saveProgress(lastScrollY.current);
+            };
+        }, [saveProgress])
+    );
+
     const loadBookmarkStatus = async () => {
         const bookmarked = new Set<string>();
         for (const verse of currentSurahData) {
@@ -344,9 +399,12 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
 
             {/* Verses List */}
             <ScrollView
+                ref={scrollViewRef}
                 style={styles.scrollContainer}
                 showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.scrollContent}>
+                contentContainerStyle={styles.scrollContent}
+                onScrollEndDrag={handleScroll}
+                onMomentumScrollEnd={handleScroll}>
                 {currentSurahData.map((verse, index) => {
                     const reference = `Quran ${surah?.id || 1}:${verse.ayah}`;
                     const key = `${verse.arabic}-${reference}`;
@@ -363,13 +421,11 @@ const SurahDetail: React.FC = (): React.JSX.Element => {
                                 <TouchableOpacity
                                     style={styles.iconButton}
                                     onPress={() => handleBookmarkToggle(verse)}>
-                                    <Text
-                                        style={{
-                                            color: isBooked ? '#FF0000' : '#29A464',
-                                            fontSize: 20,
-                                        }}>
-                                        {isBooked ? <FontAwesome name={'heart'} size={20} color={'green'}/> : <FontAwesome name={'heart-o'} size={20} color={'green'}/>}
-                                    </Text>
+                                    <FontAwesome
+                                        name={isBooked ? 'heart' : 'heart-o'}
+                                        size={20}
+                                        color="#29A464"
+                                    />
                                 </TouchableOpacity>
                             </View>
                         </View>

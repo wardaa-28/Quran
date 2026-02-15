@@ -8,6 +8,7 @@ import {
     Image,
     Modal,
     TextInput,
+    Alert,
 } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -18,6 +19,8 @@ const Tasbih: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
 
     const [isModalVisible, setModalVisible] = React.useState(false);
+    const [isEditMode, setIsEditMode] = React.useState(false);
+    const [editingTasbihId, setEditingTasbihId] = React.useState<number | null>(null);
     const [selectedCount, setSelectedCount] = React.useState(33);
     const [title, setTitle] = React.useState('');
     const [zikr, setZikr] = React.useState('');
@@ -91,31 +94,79 @@ const Tasbih: React.FC = (): React.JSX.Element => {
         }, [])
     );
 
+    const isManuallyAdded = (id: number) => id > 10000;
+
     const handleAddTasbih = async () => {
-        if (!zikr && !title) {
-            // Don't add if both fields are empty
-            return;
+        if (!zikr && !title) return;
+
+        if (isEditMode && editingTasbihId) {
+            const updatedList = tasbihList.map((item) =>
+                item.id === editingTasbihId
+                    ? {
+                          ...item,
+                          arabic: zikr || title || item.arabic,
+                          count: selectedCount,
+                      }
+                    : item
+            );
+            setTasbihList(updatedList);
+            await saveTasbihList(updatedList);
+        } else {
+            const newTasbih: TasbihItem = {
+                id: Date.now(),
+                arabic: zikr || title || 'New Tasbih',
+                date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit' }).replace(/ /g, '-'),
+                count: selectedCount,
+                colors: ['#E7F9EF', '#FCFFFD'],
+                buttonColor: '#B6E8BD',
+            };
+            const updatedList = [...tasbihList, newTasbih];
+            setTasbihList(updatedList);
+            await saveTasbihList(updatedList);
         }
 
-        const newTasbih: TasbihItem = {
-            id: Date.now(),
-            arabic: zikr || title || 'New Tasbih', // Fallback
-            date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit' }).replace(/ /g, '-'),
-            count: selectedCount,
-            colors: ['#E7F9EF', '#FCFFFD'],
-            buttonColor: '#B6E8BD',
-        };
-        
-        const updatedList = [...tasbihList, newTasbih];
-        setTasbihList(updatedList);
-        
-        // Save to local storage
-        await saveTasbihList(updatedList);
-        
         setModalVisible(false);
+        setIsEditMode(false);
+        setEditingTasbihId(null);
         setTitle('');
         setZikr('');
         setSelectedCount(33);
+    };
+
+    const handleLongPressTasbih = (item: TasbihItem) => {
+        if (!isManuallyAdded(item.id)) return;
+        Alert.alert('Tasbih', 'Choose an action', [
+            { text: 'Cancel', style: 'cancel' },
+            {
+                text: 'Edit',
+                onPress: () => {
+                    setTitle(item.arabic);
+                    setZikr(item.arabic);
+                    setSelectedCount(item.count);
+                    setEditingTasbihId(item.id);
+                    setIsEditMode(true);
+                    setModalVisible(true);
+                },
+            },
+            {
+                text: 'Delete',
+                style: 'destructive',
+                onPress: () => {
+                    Alert.alert('Delete Tasbih', 'Are you sure?', [
+                        { text: 'Cancel', style: 'cancel' },
+                        {
+                            text: 'Delete',
+                            style: 'destructive',
+                            onPress: async () => {
+                                const updatedList = tasbihList.filter((t) => t.id !== item.id);
+                                setTasbihList(updatedList);
+                                await saveTasbihList(updatedList);
+                            },
+                        },
+                    ]);
+                },
+            },
+        ]);
     };
 
     const renderModal = () => (
@@ -123,7 +174,11 @@ const Tasbih: React.FC = (): React.JSX.Element => {
             animationType="slide"
             transparent={true}
             visible={isModalVisible}
-            onRequestClose={() => setModalVisible(false)}>
+            onRequestClose={() => {
+                setModalVisible(false);
+                setIsEditMode(false);
+                setEditingTasbihId(null);
+            }}>
             <TouchableOpacity 
                 style={styles.modalOverlay}
                 activeOpacity={1}
@@ -132,7 +187,7 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                     style={styles.modalContainer}
                     onStartShouldSetResponder={() => true}>
                     <View style={styles.modalHeaderBar} />
-                    <Text style={styles.modalTitle}>Create Tasbih</Text>
+                    <Text style={styles.modalTitle}>{isEditMode ? 'Edit Tasbih' : 'Create Tasbih'}</Text>
 
                     <View style={styles.inputContainer}>
                         <Text style={styles.inputLabel}>Title</Text>
@@ -176,7 +231,7 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                     </View>
 
                     <TouchableOpacity style={styles.continueButton} onPress={handleAddTasbih}>
-                        <Text style={styles.continueButtonText}>Continue</Text>
+                        <Text style={styles.continueButtonText}>{isEditMode ? 'Save' : 'Continue'}</Text>
                     </TouchableOpacity>
                 </View>
             </TouchableOpacity>
@@ -206,8 +261,12 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                 showsVerticalScrollIndicator={false}
                 nestedScrollEnabled={true}>
                 {tasbihList.map((item) => (
-                    <LinearGradient
+                    <TouchableOpacity
                         key={item.id}
+                        activeOpacity={1}
+                        onLongPress={() => handleLongPressTasbih(item)}
+                        delayLongPress={500}>
+                    <LinearGradient
                         colors={item.colors}
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 1 }}
@@ -230,6 +289,7 @@ const Tasbih: React.FC = (): React.JSX.Element => {
                             </View>
                         </TouchableOpacity>
                     </LinearGradient>
+                    </TouchableOpacity>
                 ))}
             </ScrollView>
 

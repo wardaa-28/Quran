@@ -6,12 +6,14 @@ import {
     TouchableOpacity,
     Image,
     Dimensions,
+    ScrollView,
+    useWindowDimensions,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import { getTasbihCount, saveTasbihCount, resetTasbihCount } from '../utils/tasbihStorage';
 
-const { width } = Dimensions.get('window');
+const { width: WINDOW_WIDTH } = Dimensions.get('window');
 
 const TasbihDetail: React.FC = (): React.JSX.Element => {
     const navigation = useNavigation();
@@ -53,8 +55,17 @@ const TasbihDetail: React.FC = (): React.JSX.Element => {
         }
     };
 
+    const { width, height } = useWindowDimensions();
+    const isLandscape = width > height;
+
     return (
         <View style={styles.container}>
+            <ScrollView
+                contentContainerStyle={[
+                    styles.scrollContent,
+                    isLandscape && { minHeight: height, justifyContent: 'center' },
+                ]}
+                showsVerticalScrollIndicator={false}>
             {/* Header */}
             <View style={styles.header}>
                 <TouchableOpacity
@@ -99,6 +110,7 @@ const TasbihDetail: React.FC = (): React.JSX.Element => {
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
+            </ScrollView>
         </View>
     );
 };
@@ -135,13 +147,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#0F261C',
     },
+    scrollContent: {
+        flexGrow: 1,
+        alignItems: 'center',
+        paddingBottom: 40,
+    },
     content: {
         alignItems: 'center',
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
     },
     handsImage: {
-        width: width * 0.6,
-        height: width * 0.5,
+        width: WINDOW_WIDTH * 0.6,
+        height: WINDOW_WIDTH * 0.5,
         marginBottom: 20
     },
     arabicText: {
@@ -195,13 +212,13 @@ const styles = StyleSheet.create({
         elevation: 12,
     },
     innerCircle: {
-        width: 170,
-        height: 170,
-        borderRadius: 85,
+        width: 100,
+        height: 100,
+        borderRadius: 50,
         borderWidth: 2,
-        borderColor: 'rgba(255,255,255,0.3)',
+        borderColor: 'rgba(255,255,255,0.5)',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     bigCountText: {
         fontSize: 40,

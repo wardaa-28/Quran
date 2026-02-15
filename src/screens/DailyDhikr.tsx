@@ -322,11 +322,11 @@ const DailyDhikr: React.FC = (): React.JSX.Element => {
 
             {/* List */}
             <ScrollView contentContainerStyle={styles.listContent} showsVerticalScrollIndicator={false}>
-                {dhikrList.map((item) => (
+                {dhikrList.map((item, index) => (
                     <View key={item.id} style={styles.card}>
                         <View style={styles.cardHeader}>
                             <View style={styles.countBadge}>
-                                <Text style={styles.countText}>{item.count}</Text>
+                                <Text style={styles.countText}>{index + 1}</Text>
                             </View>
                             <View style={styles.cardActions}>
                                 {/* <TouchableOpacity style={styles.actionIcon}>
@@ -335,11 +335,11 @@ const DailyDhikr: React.FC = (): React.JSX.Element => {
                                 <TouchableOpacity 
                                     style={styles.actionIcon}
                                     onPress={() => handleBookmarkToggle(item)}>
-                                    {bookmarkedDhikrs.has(`${item.arabic}-Dhikr ${activeTab} - ${item.reference}`) ? (
-                                        <FontAwesome name={'heart'} size={20} color={'#29A464'} />
-                                    ) : (
-                                        <FontAwesome name={'heart-o'} size={20} color={'#29A464'} />
-                                    )}
+                                    <FontAwesome
+                                        name={bookmarkedDhikrs.has(`${item.arabic}-Dhikr ${activeTab} - ${item.reference}`) ? 'heart' : 'heart-o'}
+                                        size={20}
+                                        color="#29A464"
+                                    />
                                 </TouchableOpacity>
                             </View>
                         </View>

@@ -14,17 +14,19 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ScreensColors, HomeGradients } from '../constants/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import { getBookmarks, Bookmark } from '../utils/bookmarkStorage';
+import { getReadingProgress } from '../utils/readingProgressStorage';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const colors = ScreensColors.screen1;
 
+let hasRestoredProgressThisSession = false;
+
 type RootStackParamList = {
   Home: undefined;
   QuranMajeed: undefined;
-  SurahDetail: { surah: any };
+  SurahDetail: { surah: any; scrollToAyahNumber?: number; source?: 'parah' | 'surah'; parahNumber?: number };
 };
-
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 const QuranMajeed: React.FC = (): React.JSX.Element => {
@@ -38,8 +40,21 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
       if (activeTab === 'Bookmark') {
         loadBookmarks();
       }
+      loadAndRestoreProgress();
     }, [activeTab])
   );
+
+  const loadAndRestoreProgress = async () => {
+    if (hasRestoredProgressThisSession) return;
+    const progress = await getReadingProgress();
+    if (progress?.surah) {
+      hasRestoredProgressThisSession = true;
+      navigation.navigate('SurahDetail', {
+        surah: progress.surah,
+        scrollToAyahNumber: progress.ayahNumber,
+      });
+    }
+  };
 
   const loadBookmarks = async () => {
     const allBookmarks = await getBookmarks();
@@ -121,10 +136,10 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
     30: [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114], // Last surahs
   };
 
-  const getSurahsForParah = (parahNumber: number) => {
+  const getSurahsForParah = React.useCallback((parahNumber: number) => {
     const surahIds = parahToSurahs[parahNumber] || [];
     return surahList.filter(surah => surahIds.includes(surah.id));
-  };
+  }, []);
 
 
 
@@ -147,7 +162,9 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
             <Image source={require('../assets/images/back.png')} style={styles.backIconImage} />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>Quran Majeed</Text>
+          <View style={styles.headerTitleWrapper} pointerEvents="box-none">
+            <Text style={styles.headerTitle}>Quran Majeed</Text>
+          </View>
           <View style={styles.headerRight} />
         </View>
 
@@ -247,7 +264,11 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
                       key={surah.id}
                       style={styles.surahCard}
                       onPress={() => {
-                        navigation.navigate('SurahDetail', { surah });
+                        navigation.navigate('SurahDetail', {
+                          surah,
+                          source: 'parah',
+                          parahNumber: selectedParah ?? undefined,
+                        });
                       }}
                     >
                       <View>
@@ -272,7 +293,10 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
                   key={surah.id}
                   style={styles.surahCard}
                   onPress={() => {
-                    navigation.navigate('SurahDetail', { surah });
+                    navigation.navigate('SurahDetail', {
+                      surah,
+                      source: 'surah',
+                    });
                   }}
                 >
                   <View >
@@ -304,12 +328,15 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
                       key={bookmark.id}
                       style={styles.bookmarkCard}
                       onPress={() => {
-                        // Find the surah from surahList
                         const surahId = bookmark.reference?.match(/Quran (\d+):/)?.[1];
+                        const ayahNum = bookmark.reference?.match(/:(\d+)/)?.[1];
                         if (surahId) {
                           const surah = surahList.find((s) => s.id === parseInt(surahId));
                           if (surah) {
-                            navigation.navigate('SurahDetail', { surah });
+                            navigation.navigate('SurahDetail', {
+                              surah,
+                              scrollToAyahNumber: ayahNum ? parseInt(ayahNum) : undefined,
+                            });
                           }
                         }
                       }}>
@@ -318,7 +345,7 @@ const QuranMajeed: React.FC = (): React.JSX.Element => {
                           <Text style={styles.bookmarkTitle}>{bookmark.title || bookmark.surahName}</Text>
                           <Text style={styles.bookmarkReference}>{bookmark.reference}</Text>
                         </View>
-                        <FontAwesome name={'heart'} size={20} color={'green'}/>
+                        <FontAwesome name="heart" size={20} color="#29A464" />
                       </View>
                       <View style={styles.bookmarkCardBody}>
                         <Text style={styles.bookmarkArabic}>{bookmark.arabic}</Text>
@@ -378,13 +405,16 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     marginBottom: 4, // Adjust for center alignment
   },
+  headerTitleWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   headerTitle: {
     fontSize: 22,
     fontWeight: 'bold',
     color: '#0F261C',
-    flex: 1,
     textAlign: 'center',
-    marginLeft: -40, // Offset for back button to center exactly
   },
   headerRight: {
     width: 40,
